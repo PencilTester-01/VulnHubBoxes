@@ -81,7 +81,7 @@ Nmap done: 1 IP address (1 host up) scanned in 21.56 seconds
 * * *
 
 `Note`
-*from the nmap output alone, I see several avenues of interest but I decided to continue with enumerating the box*
+*from the nmap output alone, I see several items of interest but I wanted to gain a better picture so I continued with enumeration*
 
 * * *
 
@@ -90,7 +90,7 @@ Nmap done: 1 IP address (1 host up) scanned in 21.56 seconds
 ### dirb
 - `dirb http://10.0.0.144:80/ /home/doxg/Downloads/wordlist/dirb-kali-master/wordlists/common.txt`
 
- The dirb scan found many directories to investigate, but the output was pretty large so I will just provide a sample below, you can also run the command yourself to see.
+ The scan found many directories, but the output was pretty large so here is a sample below, you can also run the command yourself to see the full output.
 
 ```
  Scanning URL: http://10.0.0.144:80/ ----
@@ -126,7 +126,7 @@ Nmap done: 1 IP address (1 host up) scanned in 21.56 seconds
 
 - `Note`
 
-*After the Nikto and Dirb scans I see several directories of interest. I brefiely check them out but wanted to continue.* 
+*After the Nikto and Dirb scans I see several directories of interest. I brefiely check them out but wanted to continue. I did find a username on the wordpress page* 
 
 **Marked a few to revist**
 ```
@@ -204,3 +204,9 @@ Now I am logged on as root I run "ls" and see a proof.txt file
 ![Optional Text](/LazyAdminWriteUp/_resources/d67193cf5c8c4618ac5ea26d010e0573.png)
 
 ## All Done!
+
+
+## General Thoughts
+
+This was a fun box. There was alot to distract you from moving forward but from the vulnhub page, I remeber seeing **"enumeration was key"**. Keeping that in mind I kept moving forward and was able to solve rather quickly. This is a great box for newcomers or people just trying to refresh thier skills
+
