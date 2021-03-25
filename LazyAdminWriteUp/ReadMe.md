@@ -125,6 +125,7 @@ Nmap done: 1 IP address (1 host up) scanned in 21.56 seconds
 ![Optional Text](/LazyAdminWriteUp/_resources/0e535510a0dd4264af4ee3ee69972d0c.png)
 
 - `Note`
+
 *After the Nikto and Dirb scans I see several directories of interest. I brefiely check them out but wanted to continue.* 
 
 **Marked a few to revist**
@@ -145,13 +146,16 @@ Found a **username** on the "/wordpress/" page **"togie"**
 ![Optional Text](/LazyAdminWriteUp/_resources/6aa4e3672c074ee3ac93972e6f01510c.png)
 
 **List Shares**
-- `smbclient -L 10.0.0.144`
+
+-`smbclient -L 10.0.0.144`
+
 ![Optional Text](/LazyAdminWriteUp/_resources/0409d251197f42db86eda3ec2a935ce7.png)
 
 **Connect to Share**
 - `smbclient //10.0.0.144/share$`
 - `login prompt provide creds`
 - `ls`
+
 ![Optional Text](/LazyAdminWriteUp/_resources/7af5b1184b60448c859a9be36fef8a12.png)
 
 **Grab Files**
@@ -196,7 +200,7 @@ Now I am logged on as root I run "ls" and see a proof.txt file
 -  `ls`
     
 - `cat proof.txt`
-    
+ 
 ![Optional Text](/LazyAdminWriteUp/_resources/d67193cf5c8c4618ac5ea26d010e0573.png)
 
 ## All Done!
