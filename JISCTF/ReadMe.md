@@ -5,7 +5,7 @@ The goal for this box is to find all Five Flags.
 * * *
 
 **Finding the Box** 10.0.0.131
-![cd5999524f06a4421e80cbc3ec9ee386.png](:/3b95ee466e2e4116b7ae60b3f9475a9c)
+![Optional Text](/JISCTF/_resources/3b95ee466e2e4116b7ae60b3f9475a9c)
 
 * * *
 
