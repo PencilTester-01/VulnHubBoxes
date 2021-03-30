@@ -5,6 +5,7 @@ The goal for this box is to find all Five Flags.
 * * *
 
 **Finding the Box** 10.0.0.131
+
 ![Optional Text](/JISCTF/_resources/3b95ee466e2e4116b7ae60b3f9475a9c.png)
 
 * * *
@@ -122,10 +123,10 @@ doxg@doxg0:~$ nikto -h 10.0.0.131 -o niktoscans/jisctf.html
 
 Looking at the nikto and dirb scans, I see some interesting places. First I took a look at the /flag directory, and without surprise I find our first flag!
 
-![2ff5e3b69ae89f9b81a8fa9b71d982bd.png](:/d36ae60f6f39469e83c7c61a6c631b5a)
+![Optional Text](/JISCTF/_resources/d36ae60f6f39469e83c7c61a6c631b5a.png)
 
 Next I look at `http://10.0.0.131/admin_area` and after inspecting the source I find some delightful credentials
-(/JISCTF/_resources/c446379faec643b395474a35fab90d38.png)
+![Optional Text](/JISCTF/_resources/c446379faec643b395474a35fab90d38.png)
 
 - `admin`
 - `3v1l_H@ck3r`
@@ -133,7 +134,7 @@ Next I look at `http://10.0.0.131/admin_area` and after inspecting the source I 
 * * *
 
 The "robots.txt" has some promising entries, will keep this in mind for now!
-(/JISCTF/_resources/0757f6a59b1449a4b295b5d914801809.png)
+![Optional Text](/JISCTF/_resources/0757f6a59b1449a4b295b5d914801809.png)
 
 * * *
 
@@ -161,15 +162,15 @@ Resource to code snippet `https://www.w3resource.com/php-exercises/php-basic-exe
 3.  Last, Navigate to IPofVM/uploaded_files/sat.php
 
 **Success!!!**
-![30e3c266d3855f447a5454822c1a8c9d.png](:/813c0e3cf9864a7a8476a171355cc79c)
+![Optional Text](/JISCTF/_resources/813c0e3cf9864a7a8476a171355cc79c.png)
 
 Next I want to upload a Reverse Shell!
 
 Reverse Shell
 
-To save time here I will use the good old "**Pentest Monkey Reverse Shell**". I tested several others that worked, but was unable to get a python shell.
+To save time here I will use the good old "**Pentest Monkey Reverse Shell**". I tested several others that worked, but was not unable to get a python shell.
 
-Rember to change the IP and port to your machine and whatever port you are listening on
+Rember to change the IP and port to your machine and whatever port you are listening on.
 
 ```
 <?php
@@ -365,12 +366,12 @@ function printit ($string) {
 
 1.  Once again I save the file in my case **got.php**
 2.  Start my netcat listener `nc -nvlp 4444`
-    ![a96cfb780a825d80fb28a7f67fd371c9.png](:/ed527a7a9d594eca8aeb7bb8c05defc4)
+    ![Optional Text](/JISCTF/_resources/ed527a7a9d594eca8aeb7bb8c05defc4.png)
 3.  Uploaded the file thru the file upload page
 4.  Go to IPofVM/uploaded_files/got.php
 
 **Success!!! We have a shell!!**
-![920685a9288a6d2417958d920ba1dca0.png](:/30b0c34ccbbf43db9d65b043836991b7)
+![Optional Text](/JISCTF/_resources/30b0c34ccbbf43db9d65b043836991b7.png)
 
 * * *
 
@@ -417,22 +418,22 @@ I can see the **technawi** user in the /etc/passwd. But After some digging I had
 
 After many attempts, I was finally lucky with `find . -name flag | grep -v 'Permission'` Keep in mind, giving our limted shell it only prints the relevant files at the end. `/var/www/html/flag`
 
-![59891e564230b39627e7066a13d40e4e.png](:/eba408d26092494e89bf347044de04c9)
+![Optional Text](/JISCTF/_resources/eba408d26092494e89bf347044de04c9.png)
 
 Thinking this was the **flag** we saw eariler I ls -alt the dir.
 
-![7bbfa751e8b0acd3a91c6f87240df315.png](:/8203a01466cf4ba6b2b40c10bdee39c7)
+![Optional Text](/JISCTF/_resources/8203a01466cf4ba6b2b40c10bdee39c7.png)
 
 I notice a "flag" file, flag directory, and a hint!
 
 No luck on flag.txt
-![9664c8e80a2b8adffefa24daa7fe1504.png](:/925f4d4afc97472c916f01968baf5bf1)
+![Optional Text](/JISCTF/_resources/925f4d4afc97472c916f01968baf5bf1.png)
 
 but on the hint......
 
 ## Hint
 
-![ff6d4d1b0bc3d0f5df45b68337596819.png](:/10811e7fb2c04386b40c21411451ab3c)
+![Optional Text](/JISCTF/_resources/10811e7fb2c04386b40c21411451ab3c.png)
 
 ```
 try to find user technawi password to read the flag.txt file, you can find it in a hidden file ;)
@@ -448,7 +449,7 @@ A very Promising File
 `/etc/mysql/conf.d/credentials.txt`
 `cat /etc/mysql/conf.d/credentials.txt`
 
-![8085dc2c83eb33935cafbd9c2447afea.png](:/1491449acd004e7e81db0b85bad4c223)
+![Optional Text](/JISCTF/_resources/1491449acd004e7e81db0b85bad4c223.png)
 
 ```
 The 4th flag is : {7845658974123568974185412}
@@ -463,10 +464,10 @@ Since the last creds didn't work for ssh I decided to try technawi.
 
 ### SSH Success!
 
-![95cf76e60a2dff8689d5362518706914.png](:/ea6d095c2ac04cd8b6e755e18ba84790)
+![Optional Text](/JISCTF/_resources/ea6d095c2ac04cd8b6e755e18ba84790.png)
 
 Let see if we can read the file
-![1e3ad5e58717fdfaaab2426380a8b911.png](:/da4093d558284e31b3a4102659a93b55)
+![Optional Text](/JISCTF/_resources/da4093d558284e31b3a4102659a93b55.png)
 
 We can!
 
