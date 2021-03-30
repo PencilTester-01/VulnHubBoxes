@@ -375,6 +375,7 @@ function printit ($string) {
 4.  Go to IPofVM/uploaded_files/got.php
 
 **Success!!! We have a shell!!**
+
 ![Optional Text](/JISCTF/_resources/30b0c34ccbbf43db9d65b043836991b7.png)
 
 * * *
