@@ -5,7 +5,7 @@ The goal for this box is to find all Five Flags.
 * * *
 
 **Finding the Box** 10.0.0.131
-![Optional Text](/JISCTF/_resources/3b95ee466e2e4116b7ae60b3f9475a9c)
+![Optional Text](/JISCTF/_resources/3b95ee466e2e4116b7ae60b3f9475a9c.png)
 
 * * *
 
@@ -125,7 +125,7 @@ Looking at the nikto and dirb scans, I see some interesting places. First I took
 ![2ff5e3b69ae89f9b81a8fa9b71d982bd.png](:/d36ae60f6f39469e83c7c61a6c631b5a)
 
 Next I look at `http://10.0.0.131/admin_area` and after inspecting the source I find some delightful credentials
-![ce1aa6efac65c9de9f32b79e3994b2c5.png](:/c446379faec643b395474a35fab90d38)
+(/JISCTF/_resources/c446379faec643b395474a35fab90d38.png)
 
 - `admin`
 - `3v1l_H@ck3r`
@@ -133,27 +133,27 @@ Next I look at `http://10.0.0.131/admin_area` and after inspecting the source I 
 * * *
 
 The "robots.txt" has some promising entries, will keep this in mind for now!
-![1e468af160afb2756b6d7e27b76821db.png](:/0757f6a59b1449a4b295b5d914801809)
+(/JISCTF/_resources/0757f6a59b1449a4b295b5d914801809.png)
 
 * * *
 
 ## Login Into Web App
 
 I was able to login using the creds I found eariler on the `http://10.0.0.131/login.php`
-![3ac9b19400fbf1b27da445a26fe247fc.png](:/18d8cdf37c994da0ad1d0b5c3912ed0c)
+(/JISCTF/_resources/18d8cdf37c994da0ad1d0b5c3912ed0c.png)
 Once Logged in, it looks like a file a file upload
-![c7a993a952ea454c66c87b3aea8290ac.png](:/ac747f1f4a954b45bee37746ea9aec2f)
+(/JISCTF/_resources/ac747f1f4a954b45bee37746ea9aec2f.png)
 I uploaded a File, and it **returned "Success" in the top left** to confirm we we use uploaded_files, this was found in the robots.txt earlier
 
 **Succes!** **I was able to upload an image!**
-![074f79abca9706d39e60f7510190372f.png](:/2cbc58cd826445df90befc40c4cbd989)
+(/JISCTF/_resources/2cbc58cd826445df90befc40c4cbd989.png)
 
 Next I will try to get command execution
 
 ## Command Execution
 
 After failing a few times the code snippet below worked
-**![fd31a6b980839baac717a8513fde236b.png](:/ef8e2ba4c08d4607bfe582b3e6ee5c29)**
+(/JISCTF/_resources/ef8e2ba4c08d4607bfe582b3e6ee5c29.png)**
 Resource to code snippet `https://www.w3resource.com/php-exercises/php-basic-exercise-17.php`
 
 1.  First, save the code to a php file in my case **sat.php**
