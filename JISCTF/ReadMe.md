@@ -489,3 +489,5 @@ You find 5 flags and got their points and finish the first scenario....
 ```
 
 **Overall Thoughts**
+
+This box was alot tougher then I thought. I wasted a lot of time trying to get a better shell and searching for files, after reading other walkthru's I noticed there were much easier and bettter ways to capture all five flags. Regardless still a great box and I learned a lot from it! 
