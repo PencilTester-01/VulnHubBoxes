@@ -42,7 +42,7 @@ Nmap done: 1 IP address (1 host up) scanned in 6.66 seconds
 
 * * *
 
-Got some ports to check out but lets run DIRB and NIKTO before we do
+I see port 22 and port 80.
 
 * * *
 
@@ -50,7 +50,7 @@ Got some ports to check out but lets run DIRB and NIKTO before we do
 
 * * *
 
-dirb http://10.0.0.131:80/ /home/doxg/Downloads/wordlist/dirb-kali-master/wordlists/common.txt -o dirbscans/jisctf
+`dirb http://10.0.0.131:80/ /home/doxg/Downloads/wordlist/dirb-kali-master/wordlists/common.txt -o dirbscans/jisctf`
 
 ```
 GENERATED WORDS: 4612                                                          
