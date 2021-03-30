@@ -163,6 +163,7 @@ Resource to code snippet `https://www.w3resource.com/php-exercises/php-basic-exe
 3.  Last, Navigate to IPofVM/uploaded_files/sat.php
 
 **Success!!!**
+
 ![Optional Text](/JISCTF/_resources/813c0e3cf9864a7a8476a171355cc79c.png)
 
 Now I want to upload a Reverse Shell!
@@ -367,7 +368,9 @@ function printit ($string) {
 
 1.  Once again, I save the file in my case **got.php**
 2.  Start my netcat listener `nc -nvlp 4444`
+
 ![Optional Text](/JISCTF/_resources/ed527a7a9d594eca8aeb7bb8c05defc4.png)
+
 3.  Uploaded the file thru the file upload page
 4.  Go to IPofVM/uploaded_files/got.php
 
@@ -421,16 +424,17 @@ After many attempts, I was finally lucky with `find . -name flag | grep -v 'Perm
 
 ![Optional Text](/JISCTF/_resources/eba408d26092494e89bf347044de04c9.png)
 
-Thinking this was the **flag** we saw eariler I ls -alt the dir.
+Thinking this was the **flag** we saw eariler I `ls -alt` the dir.
 
 ![Optional Text](/JISCTF/_resources/8203a01466cf4ba6b2b40c10bdee39c7.png)
 
-I notice a "flag" file, flag directory, and a hint!
+I notice a flag file, flag directory, and a hint!
 
 No luck on flag.txt
 
 ![Optional Text](/JISCTF/_resources/925f4d4afc97472c916f01968baf5bf1.png)
 
+***
 but on the hint......
 
 ## Hint
@@ -445,8 +449,7 @@ The 3rd flag is : {7645110034526579012345670}
 
 The hint seemed to be referencing hidden files for the user technawi. After running `find / -user technawi | grep -v 'Permission'`
 
-**Finally Something!!**
-A very Promising File
+**Finally! A very Promising Looking File!
 
 `/etc/mysql/conf.d/credentials.txt`
 `cat /etc/mysql/conf.d/credentials.txt`
@@ -469,9 +472,10 @@ Since the last creds didn't work for ssh I decided to try technawi.
 ![Optional Text](/JISCTF/_resources/ea6d095c2ac04cd8b6e755e18ba84790.png)
 
 Let see if we can read the file
+
 ![Optional Text](/JISCTF/_resources/da4093d558284e31b3a4102659a93b55.png)
 
-We can!
+## We can!
 
 ```
 The 5th flag is : {5473215946785213456975249}
