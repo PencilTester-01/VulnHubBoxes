@@ -1,13 +1,13 @@
 # LordofTheRoot
 I don't know much about Lord of the Rings, but this box was recommended on several sites. As a good machine to practice in prep for the OSCP. So I decided to attempt it.
 
-# Description from VulnHub
+## Description from VulnHub
 
 "I created this machine to help others learn some basic CTF hacking strategies and some tools. I aimed this machine to be very similar in difficulty to those I was breaking on the OSCP."
 
 Author: KookSec
 
-# Enumeration
+## Enumeration
 
 After boot the login screen is shown, and gives us **username smeagol**
 
