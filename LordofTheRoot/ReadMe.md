@@ -1,4 +1,4 @@
-
+# LordofTheRoot
 I don't know much about Lord of the Rings, but this box was recommended on several sites. As a good machine to practice in prep for the OSCP. So I decided to attempt it.
 
 # Description from VulnHub
@@ -9,7 +9,7 @@ Author: KookSec
 
 # Enumeration
 
-On start, the box comes with **username smeagol**
+After boot the login screen is shown, and gives us **username smeagol**
 
 ![Optional Text](/LordofTheRoot/_resources/fa69f71a2a834d72824b33535c54b4d8.png)
 
@@ -17,8 +17,9 @@ On start, the box comes with **username smeagol**
 
 ![Optional Text](/LordofTheRoot/_resources/bf2f53a39ea940bebf649229897c2f67.png)
 
-ip address = ***10.0.0.13***
+- `vulnmachine-ipaddress = ***10.0.0.13***`
 
+### NMAP
 - `sudo nmap -Pn -sC -sV -oA nmapscans/lotr 10.0.0.13`
 
 ![Optional Text](/LordofTheRoot/_resources/a2fd1e3f15b749ce8f2c612cfff77c94.png)
