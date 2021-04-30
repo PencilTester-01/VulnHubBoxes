@@ -17,7 +17,7 @@ It's designed to be a beginner ctf, if you're new to pen testing, check it out!
 
 ## Finding the IP address of the Vuln Machine
 
-`sudo arp-scan 10.0.0.0/24`
+I ran `sudo arp-scan 10.0.0.0/24`
 ![Optional Text](/Rickdiculously%20Easy/_resources/32a1b37e8b2c47cc8ed70ce1e649487f.png)
 
 * * *
@@ -66,17 +66,17 @@ Service detection performed. Please report any incorrect results at https://nmap
 
 ### Looking at the NAMP scan results
 
-I look at `https://10.0.0.137:9090/` and I see bewlow image. We got our First Flag! 
-Other than the flag there didn't seem to be much here so I moved on and  attempted an anonymous login via FTP.
+I look at `https://10.0.0.137:9090/` and I see(below image). We got our First Flag! 
+Other than the flag there didn't seem to be much here so I moved on and attempted an anonymous login via FTP.
 ![Optional Text](/Rickdiculously%20Easy/_resources/28c5f1cc424b4876b5ee99bb7015065d.png)
 
 ### FTP Anonymous Login
 I used `ftp 10.0.0.137` to connect and for the **username&passwords** I used **Anonymous** when prompted.
 ![Optional Text](/Rickdiculously%20Easy/_resources/a3e9dd56c2494a4eba13be892a99165f.png)
 
-Looks like another Flag.
+Once logged in, I `ls` and can see 2 files.
 
-I used `wget -m ftp://anonymous:anonymous@10.0.0.137` to retrieve the file(s)
+I used `wget -m ftp://anonymous:anonymous@10.0.0.137` to retrieve the file(s). Alternativley you could also use the `get` cmd
 
 Looks like we got our second flag!
 
