@@ -93,16 +93,19 @@ I ran `nikto -h 10.0.0.137:80`
 * * *
 
 Checking Out the /passwords/ dir I see
+
 ![Optional Text](/Rickdiculously%20Easy/_resources/583ddbbb5a134746a502bbbdd01d5b6d.png)
 
 * * *
 
 After Clicking on FLAG.txt I see
+
 ![Optional Text](/Rickdiculously%20Easy/_resources/a149221d696b42239fedfef08d456a1d.png)
 
 * * *
 
 Clicking on the passwords.html I see
+
 ![Optional Text](/Rickdiculously%20Easy/_resources/be61f44dc89b433995b0bdda425d1160.png)
 
 **The message**
