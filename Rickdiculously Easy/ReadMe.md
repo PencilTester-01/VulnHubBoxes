@@ -64,7 +64,7 @@ Service detection performed. Please report any incorrect results at https://nmap
 
 * * *
 
-### Checking out items from the NAMP scan
+### Looking at the NAMP scan results
 
 I check out the `https://10.0.0.137:9090/` from the nmap scan and I see
 ![Optional Text](/Rickdiculously%20Easy/_resources/28c5f1cc424b4876b5ee99bb7015065d.png)
