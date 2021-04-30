@@ -82,7 +82,8 @@ Looks like we got our second flag!
 
 ![Optional Text](/Rickdiculously%20Easy/_resources/380d1b0562be4575a485325880fd6713.png)
 
-So far we found 2 flags for a total of 20 points 110 points left to go.
+**So far, we found 2 flags for a total of 20 points, and 110 points left to go.**
+
 * * *
 
 ## Nikto scan results
@@ -98,13 +99,13 @@ Looking at the `/passwords/` dir I see
 
 * * *
 
-After clicking on FLAG.txt I see
+After clicking on FLAG.txt we get another Flag!
 
 ![Optional Text](/Rickdiculously%20Easy/_resources/a149221d696b42239fedfef08d456a1d.png)
 
 * * *
 
-Clicking on the passwords.html I see
+Obvisouly passwords.html seems interesting. 
 
 ![Optional Text](/Rickdiculously%20Easy/_resources/be61f44dc89b433995b0bdda425d1160.png)
 
@@ -114,6 +115,8 @@ Clicking on the passwords.html I see
 Wow Morty real clever. Storing passwords in a file called passwords.html? You've really done it this time Morty. Let me at least hide them.. I'd delete them entirely but I know you'd go bitching to your mom. That's the last thing I need.
 ```
 
+Looks like Rick has hidden the password, this prompts me to review the source code.
+
 * * *
 
 Looking at the source of `10.0.0.137/passwords/passwords.html` I see:
@@ -121,12 +124,12 @@ Looking at the source of `10.0.0.137/passwords/passwords.html` I see:
 
 * * *
 
-**Great as of right now we have a password `winter` and 30 points found 100 left to go!**
+**Great as of right now we have a password `winter` and 30 points, 100 left to go!**
 
-Looking at `http://10.0.0.137/robots.txt` I see:
+Moving on I look at `http://10.0.0.137/robots.txt`
 ![Optional Text](/Rickdiculously%20Easy/_resources/8279bcc2dac9489096951170c9a55b04.png)
 
-Looks like another set of directories
+Mhmm these like some more promising 
 
 ```
 /cgi-bin/root_shell.cgi
@@ -135,7 +138,7 @@ Looks like another set of directories
 
 ```
 
-`10.0.0.137/cgi-bin/root_shell.cgi`
+I go to `10.0.0.137/cgi-bin/root_shell.cgi` hoping it was going to be this easy lol but I was quickly dissapointed 
 ![Optional Text](/Rickdiculously%20Easy/_resources/c1d060c970384b449cadc580c55915b8.png)
 
 `http://10.0.0.137/cgi-bin/tracertool.cgi`
