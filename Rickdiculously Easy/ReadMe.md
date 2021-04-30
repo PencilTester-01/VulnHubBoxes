@@ -72,7 +72,7 @@ Other than the flag there didn't seem to be much here so I moved on and attempte
 
 ### FTP Anonymous Login
 I used `ftp 10.0.0.137` to connect and for the **username&passwords** I used **Anonymous** when prompted.
-![Optional Text](/Rickdiculously%20Easy/_resources/a3e9dd56c2494a4eba13be892a99165f.png)
+![Optional Text](/Rickdiculously%20Easy/_resources/b12fe3b23b265e5ec5fe295ae5a5caa2.png)
 
 Once logged in, I `ls` and can see 2 files.
 
@@ -87,22 +87,22 @@ So far we found 2 flags for a total of 20 points 110 points left to go.
 
 ## Nikto scan results
 
-`nikto -h 10.0.0.137:80`
+I ran `nikto -h 10.0.0.137:80`
 ![Optional Text](/Rickdiculously%20Easy/_resources/e80a8432e21b47f8bb96a19a801c69a9.png)
 
 * * *
 
-Checking Out the /passwords/ dir I see:
+Checking Out the /passwords/ dir I see
 ![Optional Text](/Rickdiculously%20Easy/_resources/583ddbbb5a134746a502bbbdd01d5b6d.png)
 
 * * *
 
-After Clicking on FLAG.txt I see:
+After Clicking on FLAG.txt I see
 ![Optional Text](/Rickdiculously%20Easy/_resources/a149221d696b42239fedfef08d456a1d.png)
 
 * * *
 
-Clicking on the passwords.html I see:
+Clicking on the passwords.html I see
 ![Optional Text](/Rickdiculously%20Easy/_resources/be61f44dc89b433995b0bdda425d1160.png)
 
 **The message**
