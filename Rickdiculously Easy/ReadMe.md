@@ -66,22 +66,23 @@ Service detection performed. Please report any incorrect results at https://nmap
 
 ### Looking at the NAMP scan results
 
-I look at `https://10.0.0.137:9090/` and I see bewlow image. We got our First Flag! Other than the flag there didn't seem to be much here so I moved on and  attempted an anonymous login via FTP.
+I look at `https://10.0.0.137:9090/` and I see bewlow image. We got our First Flag! 
+Other than the flag there didn't seem to be much here so I moved on and  attempted an anonymous login via FTP.
 ![Optional Text](/Rickdiculously%20Easy/_resources/28c5f1cc424b4876b5ee99bb7015065d.png)
 
 ### FTP Anonymous Login
-I used `ftp 10.0.0.137` for the username and passwords I used Anonymous when prompted.
+I used `ftp 10.0.0.137` to connect and for the **username&passwords** I used **Anonymous** when prompted.
 ![Optional Text](/Rickdiculously%20Easy/_resources/a3e9dd56c2494a4eba13be892a99165f.png)
 
-I seen another Flag but when I attempted to cat the flag I saw a the below image
+Looks like another Flag.
 
+I used `wget -m ftp://anonymous:anonymous@10.0.0.137` to retrieve the file(s)
 
- I used `wget -m ftp://anonymous:anonymous@10.0.0.137`
-Looks like we got our second flag after 
+Looks like we got our second flag!
+
 ![Optional Text](/Rickdiculously%20Easy/_resources/380d1b0562be4575a485325880fd6713.png)
 
-2 Flags found for 20 points, 110 left to go
-
+So far we found 2 flags for a total of 20 points 110 points left to go.
 * * *
 
 ## Nikto scan results
