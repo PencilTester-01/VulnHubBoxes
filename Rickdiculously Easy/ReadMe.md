@@ -130,13 +130,13 @@ Looking at the source of `10.0.0.137/passwords/passwords.html` I see:
 
 Moving on I look at `http://10.0.0.137/robots.txt`
 ![Optional Text](/Rickdiculously%20Easy/_resources/8279bcc2dac9489096951170c9a55b04.png)
+```
+They're Robots Morty! It's ok to shoot them! They're just Robots!
 
-Mhmm these like some more promising 
-
-`/cgi-bin/root_shell.cgi`
-`/cgi-bin/tracertool.cgi`
-`/cgi-bin/*`
-
+/cgi-bin/root_shell.cgi
+/cgi-bin/tracertool.cgi
+/cgi-bin/*
+```
 I go to `10.0.0.137/cgi-bin/root_shell.cgi` hoping it was going to be this easy lol but I was quickly dissapointed!
 ![Optional Text](/Rickdiculously%20Easy/_resources/c1d060c970384b449cadc580c55915b8.png)
 
