@@ -92,13 +92,13 @@ I ran `nikto -h 10.0.0.137:80`
 
 * * *
 
-Checking Out the /passwords/ dir I see
+Looking at the `/passwords/` dir I see
 
 ![Optional Text](/Rickdiculously%20Easy/_resources/583ddbbb5a134746a502bbbdd01d5b6d.png)
 
 * * *
 
-After Clicking on FLAG.txt I see
+After clicking on FLAG.txt I see
 
 ![Optional Text](/Rickdiculously%20Easy/_resources/a149221d696b42239fedfef08d456a1d.png)
 
@@ -121,7 +121,7 @@ Looking at the source of `10.0.0.137/passwords/passwords.html` I see:
 
 * * *
 
-Great as of right now we have a password `winter` and 30 points found 100 left to go!
+**Great as of right now we have a password `winter` and 30 points found 100 left to go!**
 
 Looking at `http://10.0.0.137/robots.txt` I see:
 ![Optional Text](/Rickdiculously%20Easy/_resources/8279bcc2dac9489096951170c9a55b04.png)
