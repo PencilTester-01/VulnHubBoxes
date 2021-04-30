@@ -66,16 +66,14 @@ Service detection performed. Please report any incorrect results at https://nmap
 
 ### Looking at the NAMP scan results
 
-I check out the `https://10.0.0.137:9090/` from the nmap scan and I see
+I look at `https://10.0.0.137:9090/` from the nmap scan and I see. Looks like we got our frist flag. Other than the flag there Didn't seem to be much here so I attempted anonymous login via FTP.
 ![Optional Text](/Rickdiculously%20Easy/_resources/28c5f1cc424b4876b5ee99bb7015065d.png)
 
-`wget -m ftp://anonymous:anonymous@10.0.0.137`
-
+ I used `wget -m ftp://anonymous:anonymous@10.0.0.137`
+Looks like we got our second flag after 
 ![Optional Text](/Rickdiculously%20Easy/_resources/380d1b0562be4575a485325880fd6713.png)
 
 2 Flags found for 20 points, 110 left to go
-
-* * *
 
 * * *
 
