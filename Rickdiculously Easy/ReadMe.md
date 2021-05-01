@@ -236,9 +236,9 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 11.71 seconds
 
 ```
-Another Flag! `FLAG{TheyFoundMyBackDoorMorty}-10Points` **50 Points found 80 Left!**
+ From the nmap output we  get Another Flag! `FLAG{TheyFoundMyBackDoorMorty}-10Points` **50 Points found 80 Left!**
 
-Noticing the odd text under **NEXT SERVICE FINGERPRINT**
+I also notice the odd text under the second **NEXT SERVICE FINGERPRINT**
 
 ### Odd Text
 ```
@@ -258,39 +258,46 @@ Another Flag! `FLAG{Flip the pickle Morty!} - 10 Points`
 ## SSH
  From the new and imporved nmap scan, SSH Looks like it's runnning on **port 22222**.
 
-The only creds I have our **Summer:winter** So I attempted a login with `ssh Summer@10.0.0.137 -p 22222`. Success! After logging in, I wanted to see if I could run `/home/RickSanchez/RICKS_SAFE/safe` but when I tried I recieved a **permission denied** 
+The only creds I have our **Summer:winter** So I attempted a login with `ssh Summer@10.0.0.137 -p 22222`. Success! After logging in, I wanted to see if I could run the .exe located at `/home/RickSanchez/RICKS_SAFE/safe` but when I tried I recieved a **permission denied** 
 
 I ran `ls /home/Morty/` and this time I can see another file 
 
 ![Optional Text](/Rickdiculously%20Easy/_resources/Safe_Password.png)
 
-**Copied the file to Summers Home DIR so I could move it to my machine**
+I copied the image file to Summer's home directory using `cp /home/Morty/Safe_Password.jpg /home/Summer`
 
-`cp /home/Morty/Safe_Password.jpg /home/Summer`
-
-Moved the file to my machine via FileZilla
+Then I moved the file to my machine via FileZilla
 
 I then used  https://stegonline.georgeom.net/upload to upload the image and extract text.
 
 ![Optional Text](/Rickdiculously%20Easy/_resources/9cdc677064af42528e30c76533c43823.png)
 
-![Optional Text](/Rickdiculously%20Easy/_resources/1db82e2b853c4415a3f1f55b438e93b0.png)
+Tada! a password was hidden inside the image file that was named `Safe_Password.jpg`
+Password = `Meeseek`
 
+Now that I have password for the zip I can extract the zip and cat the file inside, as seen in the image below
+
+![Optional Text](/Rickdiculously%20Easy/_resources/1db82e2b853c4415a3f1f55b438e93b0.png)
+***
 Monday: So today Rick told me huge secret. He had finished his flask and was on to commercial grade paint solvent. He spluttered something about a safe, and a password. Or maybe it was a safe password... Was a password that was safe? Or a password to a safe? Or a safe password to a safe?
 
 Anyway. Here it is:
 
-20 points
+FLAG: {131333} - 20 Points
+***
+**80 Points Found, 50 Left!**
+### Running the .exe
 
-Anyway. Here it is:
+I didn't spend to much the exe earlier but now it looks I need too plus the flag also looks like it is giving me password, just not sure how to test it or where to use it just yet.
 
-Here it is:
+After some tinkering, I cp the `/home/RickSanchez/RICKS_SAFE/safe` to Summer's home directory where I am able to run the exe.
 
-./safe 131333
+![Optional Text](/Rickdiculously%20Easy/_resources/Safe_Password.png)
+
 
 ![Optional Text](/Rickdiculously%20Easy/_resources/a932636ee913450eb6a3bfa08c8ca6fb.png)
 
-
+./safe 131333
 [Had to do some reading](https://www.rootinstall.com/tutorial/creating-custom-wordlists-using-crunch-utility/)
   
  1227  crunch 5 5 -t ,%the -o password.txt 
