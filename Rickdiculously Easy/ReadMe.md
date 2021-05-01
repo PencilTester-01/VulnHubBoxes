@@ -163,11 +163,11 @@ You can also print out the `/etc/passwd` with the tracertool by placing `;nl /et
 29 Summer:x:1002:1002::/home/Summer:/bin/bash
 30 apache:x:48:48:Apache:/usr/share/httpd:/sbin/nologin
 ```
-My guess is the password we found early `winter` has to belong to one of these users! After testing the creds manually. We got in with **Summer&winter** via ftp.
+My guess is the password we found earlier `winter` has to belong to one of these users! After testing the creds manually. We got in with **Summer&winter** via ftp.
 
 ## FTP Login
 
-After using the credentials **Summer:winter** I was able to login via FTP and found the next FLAG. **40 points found and 90 left to go!**
+I was able to login via FTP and found the next FLAG. **40 points found and 90 left to go!**
 
 ![Optional Text](/Rickdiculously%20Easy/_resources/33bd2ec1b02544c698bae44d6cef7f85.png)
 
