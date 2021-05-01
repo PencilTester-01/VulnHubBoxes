@@ -157,13 +157,13 @@ The cat command didn't work, but I encourage you to try, someone has a great sin
 :nl /etc/passwd
 
 ![Optional Text](/Rickdiculously%20Easy/_resources/6a8dee2210714497bd66728abccf025e.png)
-
+```
 Great now we have some usernames
 27 RickSanchez:x:1000:1000::/home/RickSanchez:/bin/bash
 28 Morty:x:1001:1001::/home/Morty:/bin/bash
 29 Summer:x:1002:1002::/home/Summer:/bin/bash
 30 apache:x:48:48:Apache:/usr/share/httpd:/sbin/nologin
-
+```
 My guess is the password `winter` has to belong to one of these users! After testing the creds We got in with **Summer&winter** via ftp.
 
 ## FTP Login
@@ -178,8 +178,9 @@ Ftp Command=`ftp 10.0.0.137`
 Username=`Summer`
 Password=`winter`
 ```
-Listing out the contents of Rick & Morty's home dir I see some interesting files
-![Optional Text](/Rickdiculously%20Easy/_resources/
+Listing out the contents of Rick & Morty's home dir I see some interesting files.
+![Optional Text](/Rickdiculously%20Easy/_resources/abef03390a739b61c1fcc6d875336b65.png)
+
 `ls /home/RickSanchez`
 `ls /home/Morty`
 
