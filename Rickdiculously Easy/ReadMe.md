@@ -236,7 +236,7 @@ Service detection performed. Please report any incorrect results at https://nmap
 Nmap done: 1 IP address (1 host up) scanned in 11.71 seconds
 
 ```
-Another Flag! `FLAG:{TheyFoundMyBackDoorMorty}-10Points` **50 Points found 80 Left!**
+Another Flag! `FLAG{TheyFoundMyBackDoorMorty}-10Points` **50 Points found 80 Left!**
 
 Noticing the odd text under **NEXT SERVICE FINGERPRINT**
 
