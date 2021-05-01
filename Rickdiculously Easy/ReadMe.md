@@ -300,10 +300,24 @@ After some tinkering, I cp the `/home/RickSanchez/RICKS_SAFE/safe` to Summer's h
 
 ![Optional Text](/Rickdiculously%20Easy/_resources/SummerSafe.png)
 
+### Out of running the safe exe
+```
+Past Rick to present Rick, tell future Rick to use GOD DAMN COMMAND LINE AAAAAHHAHAGGGGRRGUMENTS!
+```
+So it looks like we need to use arguments when running the safe executable. However, I don't know what those are. I spent way to much time here. I first looked to see if the exe would print out a help page or anything close. But it didn't. I reveiwed the last flag `journal.txt` and started attempting cmds like the ones below.
+```
+./safe  Here it is:
+./safe Anyway. Here it is:
+./safe . Here it is:
+./safe ". Here it is:"
+./safe "Anyway. Here it is:"
+
+```
+The above is a small sample of what I tried lol. Finally after a long time, I got lucky and tried `./safe 131333`. The only reason I thought to try this was looking at all the other flags. None of the other flags contained numbers.  
 
 ![Optional Text](/Rickdiculously%20Easy/_resources/a932636ee913450eb6a3bfa08c8ca6fb.png)
 
-./safe 131333
+
 [Had to do some reading](https://www.rootinstall.com/tutorial/creating-custom-wordlists-using-crunch-utility/)
   
  1227  crunch 5 5 -t ,%the -o password.txt 
