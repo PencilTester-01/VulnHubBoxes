@@ -182,7 +182,13 @@ Listing out the contents of Rick & Morty's home dir I see some interesting files
 ![Optional Text](/Rickdiculously%20Easy/_resources/abef03390a739b61c1fcc6d875336b65.png)
 
 `ls /home/RickSanchez`
+
 `ls /home/Morty`
+
+In the effort to save time I run `wget -m ftp://Summer:winter@10.0.0.137` and download all the files avaible with Summer's Cred
+
+
+Kutos to [HackTricks](https://book.hacktricks.xyz/pentesting/pentesting-ftp#download-all-files-from-ftp)
 
 [http://10.0.0.0.137/cgi-bin/tracertool.cgi?parameter=||whoami](http://10.0.0.0.137/cgi-bin/tracertool.cgi?
 
