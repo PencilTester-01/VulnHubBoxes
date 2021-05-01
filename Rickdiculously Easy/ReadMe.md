@@ -180,15 +180,15 @@ Password=`winter`
 Listing out the contents of Rick & Morty's home dir I see some interesting files.
 ![Optional Text](/Rickdiculously%20Easy/_resources/abef03390a739b61c1fcc6d875336b65.png)
 
+**Listing the Directories**
 `ls /home/RickSanchez`
-
 `ls /home/Morty`
 
-I used filezilla to move the files to my machine. To unzip the file I need a password for the journal.txt.zip found in Morty's home dir. Not knowing the password I figured there was more. 
+I used filezilla to move the files to my machine. To unzip journal.txt.zip found in Morty's home dir I need a password. Since I didn't know the password I continued on.
 
 I moved onto the contents of Rick's home Dir. First Looking at the `RICKS_SAFE` dir. Inside there was an exe named `safe` and another directory `ThisDoesntContainAnyFlags`. Inside `ThisDoesntContainAnyFlags` was a file called `NotAFlag.txt`. I wasn't able to run the exe even after moving the file to my machine unless I installed a libmcrypt. I didn't want to do that plus I figured I was missing something at this point!
 
-Contents of `NotAFlag.txt`
+**Contents of `NotAFlag.txt`**
 
 ```
 hhHHAaaaAAGgGAh. You totally fell for it... Classiiiigihhic.
