@@ -273,6 +273,7 @@ I then used  https://stegonline.georgeom.net/upload to upload the image and extr
 ![Optional Text](/Rickdiculously%20Easy/_resources/9cdc677064af42528e30c76533c43823.png)
 
 Tada! a password was hidden inside the image file that was named `Safe_Password.jpg`
+
 Password = `Meeseek`
 
 Now that I have password for the zip I can extract the zip and cat the file inside, as seen in the image below
@@ -297,7 +298,7 @@ I didn't spend much time on the exe earlier but now it looks I need too plus the
 
 After some tinkering, I cp the `/home/RickSanchez/RICKS_SAFE/safe` to Summer's home directory where I am able to run the exe.
 
-![Optional Text](/Rickdiculously%20Easy/_resources/Safe_Password.png)
+![Optional Text](/Rickdiculously%20Easy/_resources/SummerSafe.png)
 
 
 ![Optional Text](/Rickdiculously%20Easy/_resources/a932636ee913450eb6a3bfa08c8ca6fb.png)
