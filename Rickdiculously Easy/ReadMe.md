@@ -278,7 +278,11 @@ Password = `Meeseek`
 Now that I have password for the zip I can extract the zip and cat the file inside, as seen in the image below
 
 ![Optional Text](/Rickdiculously%20Easy/_resources/1db82e2b853c4415a3f1f55b438e93b0.png)
+
+
 ***
+### Contents of journal.txt
+
 Monday: So today Rick told me huge secret. He had finished his flask and was on to commercial grade paint solvent. He spluttered something about a safe, and a password. Or maybe it was a safe password... Was a password that was safe? Or a password to a safe? Or a safe password to a safe?
 
 Anyway. Here it is:
@@ -286,9 +290,10 @@ Anyway. Here it is:
 FLAG: {131333} - 20 Points
 ***
 **80 Points Found, 50 Left!**
+***
 ### Running the .exe
 
-I didn't spend to much the exe earlier but now it looks I need too plus the flag also looks like it is giving me password, just not sure how to test it or where to use it just yet.
+I didn't spend much time on the exe earlier but now it looks I need too plus the flag also looks like it is giving me password, just not sure how to test it or where to use it just yet.
 
 After some tinkering, I cp the `/home/RickSanchez/RICKS_SAFE/safe` to Summer's home directory where I am able to run the exe.
 
