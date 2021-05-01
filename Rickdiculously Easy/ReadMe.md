@@ -258,20 +258,19 @@ Another Flag! `FLAG{Flip the pickle Morty!} - 10 Points`
 ## SSH
  From the new and imporved nmap scan, SSH Looks like it's runnning on **port 22222**.
 
-The only creds I have our **Summer:winter**So I attempt a login with `ssh Summer@10.0.0.137 -p 22222`. Success! After logging in, I wanted to see if I could run `/home/RickSanchez/RICKS_SAFE/safe` but when I tried I recieved a **permission denied** 
+The only creds I have our **Summer:winter** So I attempted a login with `ssh Summer@10.0.0.137 -p 22222`. Success! After logging in, I wanted to see if I could run `/home/RickSanchez/RICKS_SAFE/safe` but when I tried I recieved a **permission denied** 
 
 I ran `ls /home/Morty/` and this time I can see another file 
+
 ![Optional Text](/Rickdiculously%20Easy/_resources/Safe_Password.png)
 
-### Copied the file to Summers Home DIR so I could move it to my machine
+**Copied the file to Summers Home DIR so I could move it to my machine**
 
 `cp /home/Morty/Safe_Password.jpg /home/Summer`
 
+Moved the file to my machine via FileZilla
+
 I then used  https://stegonline.georgeom.net/upload to upload the image and extract text.
-
-[http://10.0.0.0.137/cgi-bin/tracertool.cgi?parameter=||whoami](http://10.0.0.0.137/cgi-bin/tracertool.cgi?
-
-[http://10.0.0.137/cgi-bin/tracertool.cgi?ip=||whoami>/var/www/output.txt||](http://10.0.0.137/cgi-bin/tracertool.cgi?ip=%7C%7Cwhoami%3E/var/www/output.txt%7C%7C)
 
 ![Optional Text](/Rickdiculously%20Easy/_resources/9cdc677064af42528e30c76533c43823.png)
 
