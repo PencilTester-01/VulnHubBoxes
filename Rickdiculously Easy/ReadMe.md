@@ -300,11 +300,13 @@ After some tinkering, I cp the `/home/RickSanchez/RICKS_SAFE/safe` to Summer's h
 
 ![Optional Text](/Rickdiculously%20Easy/_resources/SummerSafe.png)
 
-### Out of running the safe exe
+### Output from running the safe exe
 ```
 Past Rick to present Rick, tell future Rick to use GOD DAMN COMMAND LINE AAAAAHHAHAGGGGRRGUMENTS!
 ```
-So it looks like we need to use arguments when running the safe executable. However, I don't know what those are. I spent way to much time here. I first looked to see if the exe would print out a help page or anything close. But it didn't. I reveiwed the last flag `journal.txt` and started attempting cmds like the ones below.
+So it looks like we need to use arguments when running the safe executable. However, I don't know what those are. 
+
+I spent way to much time here. First I looked to see if the exe would print out a help page or anything close. But it didn't. I then reveiwed the last flag `journal.txt` and started attempting cmds like the ones below.
 ```
 ./safe  Here it is:
 ./safe Anyway. Here it is:
@@ -317,6 +319,20 @@ The above is a small sample of what I tried lol. Finally after a long time, I go
 
 ![Optional Text](/Rickdiculously%20Easy/_resources/a932636ee913450eb6a3bfa08c8ca6fb.png)
 
+### Output from `./safe 131333`
+```
+[Summer@localhost ~]$ ./safe 131333
+decrypt: 	FLAG{And Awwwaaaaayyyy we Go!} - 20 Points
+
+Ricks password hints:
+ (This is incase I forget.. I just hope I don't forget how to write a script to generate potential passwords. Also, sudo is wheely good.)
+Follow these clues, in order
+
+
+1 uppercase character
+1 digit
+One of the words in my old bands name.�	@
+```
 
 [Had to do some reading](https://www.rootinstall.com/tutorial/creating-custom-wordlists-using-crunch-utility/)
   
