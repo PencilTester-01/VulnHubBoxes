@@ -184,17 +184,18 @@ Listing out the contents of Rick & Morty's home dir I see some interesting files
 `ls /home/RickSanchez`
 `ls /home/Morty`
 
-I used filezilla to move the files to my machine. To unzip journal.txt.zip found in Morty's home dir I need a password. Since I didn't know the password I continued on.
+I used filezilla to move the files to my machine. To unzip journal.txt.zip the file found in Morty's home directory, I needed a password. Since I didn't know the password, I continued on.
 
-I moved onto the contents of Rick's home Dir. First Looking at the `RICKS_SAFE` dir. Inside there was an exe named `safe` and another directory `ThisDoesntContainAnyFlags`. Inside `ThisDoesntContainAnyFlags` was a file called `NotAFlag.txt`. I wasn't able to run the exe even after moving the file to my machine unless I installed a libmcrypt. I didn't want to do that plus I figured I was missing something at this point!
+I moved onto Rick's home Dir. First Looking at the `RICKS_SAFE` directory. Inside there was an .exe named `safe` and another directory `ThisDoesntContainAnyFlags`. Inside `ThisDoesntContainAnyFlags` was a file called `NotAFlag.txt`. I wasn't able to run the exe even after moving the file to my machine unless I installed a libmcrypt. I didn't want to do that plus I figured I was missing something at this point!
 
-**Contents of `NotAFlag.txt`**
+**Contents of** `NotAFlag.txt`
 
 ```
 hhHHAaaaAAGgGAh. You totally fell for it... Classiiiigihhic.
 But seriously this isn't a flag..
 ```
-I looked over all my notes from the Vulnerable machine and decided to do a little more enumeration. The first thing I did was run a full port nmap scan.
+I looked over my notes from the machine and decided to do a little more enumeration. The first thing I did was run a full port nmap scan.
+
 ![Optional Text](/Rickdiculously%20Easy/_resources/a6df27299520dc839dc8c3c5fb6ac8e9.png)
 
 After running the scan I see several ports that I didn't see before, oops! So I ran `nmap -sC -sV -sS -p 13337,22222,60000 10.0.0.137`.
@@ -243,26 +244,26 @@ Noticing the odd text under **NEXT SERVICE FINGERPRINT**
 ```
 "Welcome\x20to\x20Ricks\x20half\x20baked\x20reverse\x20shell\.\.\ SF:.\n#\x20")%r(ibm-db2,2F,"Welcome\x20to\x20Ricks\x20half\x20baked\x20rev SF:erse\x20shell\.\.\.\n#\x20");
 ```
-Mhhmmm!! Did Rick leave a Reverse Shell Open? 
+Mhhmmm! Did Rick leave a Reverse Shell Open? 
 
 I used `nc 10.0.0.137 60000`
-![Optional Text](/Rickdiculously%20Easy/_resources/RickRevShell.png)
 
+![Optional Text](/Rickdiculously%20Easy/_resources/RickRevShell.png)
 
 Another Flag! `FLAG{Flip the pickle Morty!} - 10 Points`
 
-**60 Points found 70 Left!**
+**60 Points found. 70 Left!**
 
 
 ## SSH
-SSH Looks like it is runnning on a different port, **port 22222**. The only creds I have our **Summer:winter** 
+ From the new and imporved nmap scan, SSH Looks like it's runnning on **port 22222**.
 
-So I attempt a login with `ssh Summer@10.0.0.137 -p 22222`. Success! after logging in, I wanted to see if I could run `/home/RickSanchez/RICKS_SAFE/safe` but when I tried I recieve a **permission denied** 
+The only creds I have our **Summer:winter**So I attempt a login with `ssh Summer@10.0.0.137 -p 22222`. Success! After logging in, I wanted to see if I could run `/home/RickSanchez/RICKS_SAFE/safe` but when I tried I recieved a **permission denied** 
 
 I ran `ls /home/Morty/` and this time I can see another file 
 ![Optional Text](/Rickdiculously%20Easy/_resources/Safe_Password.png)
 
-Copied the file to Summers Home DIR so I could move it to my machine
+### Copied the file to Summers Home DIR so I could move it to my machine
 
 `cp /home/Morty/Safe_Password.jpg /home/Summer`
 
