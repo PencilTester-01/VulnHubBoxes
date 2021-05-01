@@ -124,7 +124,7 @@ Looking at the source of `10.0.0.137/passwords/passwords.html` I see:
 
 * * *
 
-**Great as of right now we have a password `winter` and 30 points, 100 left to go!**
+**Great as of right now we have a password, `winter`, and 30 points, 100 left to go!**
 
 * * *
 
