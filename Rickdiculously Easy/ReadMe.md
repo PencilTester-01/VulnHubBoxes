@@ -147,10 +147,9 @@ I then take a look at `http://10.0.0.137/cgi-bin/tracertool.cgi`
 
 I look at `http://10.0.0.137/cgi-bin/tracertool.cgi` and after testing I releazed it was suscpetialbe to command injection
 
-`1.1.1.1;uname -r` returned
-4.11.8-300.fc26.x86_64
+`1.1.1.1;uname -r` returned 4.11.8-300.fc26.x86_64 looks like the semicolon did the trick.
 
-I tried to get a reverse shell but didn't have anyluck so I attempted to print the output of the `/etc/passwd`
+I tried to get a reverse shell but didn't have anyluck so I printed the output of the `/etc/passwd`
 
 The cat command didn't work, but I encourage you to try, someone has a great since of humor! I used `nl` instead
 
@@ -164,11 +163,11 @@ Great now we have some usernames
 29 Summer:x:1002:1002::/home/Summer:/bin/bash
 30 apache:x:48:48:Apache:/usr/share/httpd:/sbin/nologin
 ```
-My guess is the password `winter` has to belong to one of these users! After testing the creds We got in with **Summer&winter** via ftp.
+My guess is the password `winter` has to belong to one of these users! After testing the creds manually We got in with **Summer&winter** via ftp.
 
 ## FTP Login
 
-After user creds **Summer:winter** I was able to get an FTP login
+After user creds **Summer:winter** I was able to get an FTP login and our next FLAG. **40 points found and 90 left to go!**
 
 ![Optional Text](/Rickdiculously%20Easy/_resources/33bd2ec1b02544c698bae44d6cef7f85.png)
 
@@ -185,10 +184,15 @@ Listing out the contents of Rick & Morty's home dir I see some interesting files
 
 `ls /home/Morty`
 
-In the effort to save time I run `wget -m ftp://Summer:winter@10.0.0.137` and download all the files avaible with Summer's Cred
+I used filezilla to move all the files over. It appears to need a password to unzip, the journal.txt.zip found in Morty's home dir. Not knowing the password I figured there was more. I moved onto the contents of Rick's home Dir. First Looking at the `RICKS_SAFE` dir. Inside there was an exe named `safe` and another directory `ThisDoesntContainAnyFlags`. Inside `ThisDoesntContainAnyFlags`  was a file called `NotAFlag.txt`
 
+Contents of `NotAFlag.txt`
 
-Kutos to [HackTricks](https://book.hacktricks.xyz/pentesting/pentesting-ftp#download-all-files-from-ftp)
+```
+hhHHAaaaAAGgGAh. You totally fell for it... Classiiiigihhic.
+But seriously this isn't a flag..
+```
+I attempted to unzip the file but 
 
 [http://10.0.0.0.137/cgi-bin/tracertool.cgi?parameter=||whoami](http://10.0.0.0.137/cgi-bin/tracertool.cgi?
 
