@@ -167,7 +167,7 @@ My guess is the password we found early `winter` has to belong to one of these u
 
 ## FTP Login
 
-After using the credentials **Summer:winter** I was able to get an FTP login and our next FLAG. **40 points found and 90 left to go!**
+After using the credentials **Summer:winter** I was able to login via FTP and found the next FLAG. **40 points found and 90 left to go!**
 
 ![Optional Text](/Rickdiculously%20Easy/_resources/33bd2ec1b02544c698bae44d6cef7f85.png)
 
