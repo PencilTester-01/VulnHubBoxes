@@ -74,7 +74,7 @@ Other than the flag there didn't seem to be much here so I moved on and attempte
 I used `ftp 10.0.0.137` to connect and for the **username&passwords** I used **Anonymous** when prompted.
 ![Optional Text](/Rickdiculously%20Easy/_resources/b12fe3b23b265e5ec5fe295ae5a5caa2.png)
 
-Once logged in, running`ls` return a file and directory. I then used `wget -m ftp://anonymous:anonymous@10.0.0.137` to retrieve the file(s). Alternativley you could use the `get` cmd or filezilla.
+Once logged in, running`ls` returned a file and directory. I then used `wget -m ftp://anonymous:anonymous@10.0.0.137` to retrieve the file(s). Alternativley you could use the `get` cmd or filezilla.
 
 After running `wget -m ftp://anonymous:anonymous@10.0.0.137`. I `cd` into the directory it created and `cat` the `Flag.txt` file
 
