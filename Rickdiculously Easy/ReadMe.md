@@ -145,15 +145,10 @@ I go to `10.0.0.137/cgi-bin/root_shell.cgi` hoping it was going to be this easy 
 I then take a look at `http://10.0.0.137/cgi-bin/tracertool.cgi`
 ![Optional Text](/Rickdiculously%20Easy/_resources/9ac3412d75fd4194b063f8a52debd39d.png)
 
-I look at `http://10.0.0.137/cgi-bin/tracertool.cgi` and after testing I releazed it was suscpetialbe to command injection
+I look at `http://10.0.0.137/cgi-bin/tracertool.cgi` and after some testing I releazed it was vulnerable to command injection
+`1.2.3.4;uname -r` returned 4.11.8-300.fc26.x86_64 looks like the semicolon did the trick. I tried to get a reverse shell but didn't have anyluck so I printed the output of the `/etc/passwd`. The cat command didn't work, but I encourage you to try, someone has a great since of humor! I used `nl` instead
 
-`1.1.1.1;uname -r` returned 4.11.8-300.fc26.x86_64 looks like the semicolon did the trick.
-
-I tried to get a reverse shell but didn't have anyluck so I printed the output of the `/etc/passwd`
-
-The cat command didn't work, but I encourage you to try, someone has a great since of humor! I used `nl` instead
-
-:nl /etc/passwd
+`;nl /etc/passwd`
 
 ![Optional Text](/Rickdiculously%20Easy/_resources/6a8dee2210714497bd66728abccf025e.png)
 ```
@@ -184,7 +179,7 @@ Listing out the contents of Rick & Morty's home dir I see some interesting files
 
 `ls /home/Morty`
 
-I used filezilla to move all the files over. It appears to need a password to unzip, the journal.txt.zip found in Morty's home dir. Not knowing the password I figured there was more. I moved onto the contents of Rick's home Dir. First Looking at the `RICKS_SAFE` dir. Inside there was an exe named `safe` and another directory `ThisDoesntContainAnyFlags`. Inside `ThisDoesntContainAnyFlags`  was a file called `NotAFlag.txt`
+I used filezilla to move files over.To unzip the file I need a password for the journal.txt.zip found in Morty's home dir. Not knowing the password I figured there was more. I moved onto the contents of Rick's home Dir. First Looking at the `RICKS_SAFE` dir. Inside there was an exe named `safe` and another directory `ThisDoesntContainAnyFlags`. Inside `ThisDoesntContainAnyFlags`  was a file called `NotAFlag.txt`. I wasn't able to run the exe even after moving the file to my machine unless I installed a libmcrypt. I didn't want to do that plus I figured I was missing something at this point!
 
 Contents of `NotAFlag.txt`
 
@@ -192,6 +187,8 @@ Contents of `NotAFlag.txt`
 hhHHAaaaAAGgGAh. You totally fell for it... Classiiiigihhic.
 But seriously this isn't a flag..
 ```
+I looked over all my notes from the machine and decided to do a little more enumeration
+
 I attempted to unzip the file but 
 
 [http://10.0.0.0.137/cgi-bin/tracertool.cgi?parameter=||whoami](http://10.0.0.0.137/cgi-bin/tracertool.cgi?
