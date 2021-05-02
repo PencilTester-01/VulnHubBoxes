@@ -45,7 +45,7 @@ I wasn't to familar with "port knocking". I have only come across a few Vulnerba
 
 For those who might be interested you can google port knocking and you will have plenty to read. In a nut shell, it's basically a secret handshake. This means the firewall rules are dynamic and once a certain knocking sequnence is achevied the firewall allows predetermined access to a service. On the vulnernable machine I believe this what the directorties `/SECRET/door1/ /SECRET/door2/ /SECRET/door3/` are for. ***I found the directories after getting a shell on the box.***
 
-Found several nmap articles, that show "port knocking" example commands but the one that worked was following sequnce:
+Found several nmap articles, that show "port knocking" example commands but the one that worked was the following sequnce:
 
 - `nmap -r -Pn -p1,2,3 10.0.0.13`
 - `nmap -Pn -p- 10.0.0.13`
