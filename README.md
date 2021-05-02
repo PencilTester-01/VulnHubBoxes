@@ -10,6 +10,7 @@ Starting with easy boxes First and will work our way up in difficulty every 5-10
 
 ### Rickdiculously Easy
 Awesome box and if you are looking to start its a great box to start with even though it can be tough at times!
+
 [Rickdiculously Easy](https://github.com/PencilTester-01/VulnHubBoxes/tree/main/Rickdiculously%20Easy#rickdiculouslyeasy).
 
 ### LordofTheRoot
