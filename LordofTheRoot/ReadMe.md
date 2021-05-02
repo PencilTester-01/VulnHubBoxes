@@ -120,7 +120,7 @@ Unfortunetly I can't sudo!
 
 ![Optional Text](/LordofTheRoot/_resources/f12668dc4a784b749247e0c64167b257.png)
 
-I dug around a little bit and decided to run LinPEAS [Link](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite) while do digging, I used filezilla to transfer the file. I then ran LinPEAS on the target machine. 
+I dug around a little bit and decided to run LinPEAS [Link](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite) while digging. I used filezilla to transfer the file. I then ran LinPEAS on the target machine. 
 
 I saw it flagged the kernel version, didn't really need LinPEAS for that, might have been a little overkill.
 
