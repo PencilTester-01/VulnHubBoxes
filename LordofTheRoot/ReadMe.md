@@ -76,7 +76,7 @@ http://10.0.0.13:1337/server-status
 http://10.0.0.13:1337/images/
 ```
 
-Diving into the URLs from the "dirb scan", I didn't find anything anything interesting until trying.
+Looked into the URLs from the dirb scan, but I didn't find anything interesting until trying.
 
 `http://10.0.0.13:1337/index.html/`
 
@@ -94,19 +94,19 @@ Diving into the URLs from the "dirb scan", I didn't find anything anything inter
 
 ![Optional Text](/LordofTheRoot/_resources/b0d9bbf984d74d2f9c457c5f9e5ef506.png)
 
-**Once again, it looks like base64 so taking the output of our previous decoding  I see:**
+**Once again, it looks like base64 so taking the output of our previous decoding and running**
 
 `echo 'Lzk3ODM0NTIxMC9pbmRleC5waHA=' | base64 -d`
 
 ![Optional Text](/LordofTheRoot/_resources/878246becd274df9bac9fe92c161699d.png)
 
-`http://10.0.0.13:1337/978345210/index.php` I see:
+I went to `http://10.0.0.13:1337/978345210/index.php`
 
 ![Optional Text](/LordofTheRoot/_resources/72f770e5bd4c4838a3366e1a7f1fe80a.png)
 
 Great! A login this looks promising!
 
-I spent some time enumerating the box and eventually got hit using SQLMAP. This was after many failed login attempts. Don't get discouraged here. I know I did, I was stuck here for a little bit. I looked at several resources to finally get something that would work. Even when I got it to work it took a long time. 
+I spent some time enumerating the box and eventually got a hit using SQLMAP. This was after many failed login attempts. I was stuck here for a little bit. I looked at several resources to finally get something that would work.
 
 `python3 sqlmap.py -url http://10.0.0.13:1337/978345210/index.php --forms --dbs --level=5 --risk=3 --batch -D Webapp --dump all`
 
@@ -120,21 +120,19 @@ Unfortunetly I can't sudo!
 
 ![Optional Text](/LordofTheRoot/_resources/f12668dc4a784b749247e0c64167b257.png)
 
-I dug around a little bit, but was it was getting late so I decided to run LinPEAS [Link](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite), I chose the quick method and used filezilla to transfer the file. I then ran LinPEAS on the target machine. LinPEAS will print out alot of informaiton but the first thing I noticed was the OS. So I started and Kernal Version
+I dug around a little bit and decided to run LinPEAS [Link](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite) while do digging, I used filezilla to transfer the file. I then ran LinPEAS on the target machine. 
+
+I saw it flagged the kernel version, didn't really need LinPEAS for that, might have been a little overkill.
 
 ![Optional Text](/LordofTheRoot/_resources/92d5b693649441e8b8f01d0032470d57.png)
 
-It also list software on the vulnerable machine, that could assist you. I find this very helpful!
-
-![Optional Text](/LordofTheRoot/_resources/c98534210a9b48dfb4b5a71f9418af04.png)
-
-So I googled `Ubuntu 14.04.3 ` exploits
+So I googled exploits related to my the machine with information LinPEAS printed out, and I found one. I didn't want to clutter this writeup with failed exploit attemps so the one that works is the one will focus on.
 
 You can find more about the exploit [here](https://www.exploit-db.com/exploits/39166)
 
 I downloaded the Exlploit
 
-- Moved the c file it to the vuln machine using filezilla
+- Move the file to the vuln machine using filezilla
 - complied it with `gcc 39166.c -o vulnpop`
 - ran the exe with `./vulnpop`
 
