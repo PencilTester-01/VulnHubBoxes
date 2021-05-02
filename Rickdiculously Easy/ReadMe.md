@@ -384,6 +384,12 @@ It works! Finally Logged in as Rick! But I still only have **100 points out of 1
 
 I test `sudo` and since it works I try `sudo passwd root`. It prompts for a new password and I give it `pencil1234`
 
+![Optional Text](/Rickdiculously%20Easy/_resources/rooted.png)
+
+# FINALLY ROOT!
+
+As root I `cd`, `ls` and `nl nl FLAG.txt` to get the last 30 point!!!!
+
 ![Optional Text](/Rickdiculously%20Easy/_resources/
 
 
