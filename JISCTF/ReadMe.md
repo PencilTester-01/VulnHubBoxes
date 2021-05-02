@@ -144,13 +144,13 @@ I was able to login using the creds I found eariler on the `http://10.0.0.131/lo
 ![Optional Text](/JISCTF/_resources/18d8cdf37c994da0ad1d0b5c3912ed0c.png)
 Once Logged in, it looks like a file a file upload
 ![Optional Text](/JISCTF/_resources/ac747f1f4a954b45bee37746ea9aec2f.png)
-I uploaded a File, and it **returned "Success" in the top left** to confirm we can use `uploaded_files`, this was found in the robots.txt earlier
+I uploaded a File, and it **returned "Success" in the top left** to confirm we can use `http://10.0.0.131/login.php/uploaded_files`, this was found in the robots.txt earlier
 
 **Succes!** **I was able to upload an image!**
 
 ![Optional Text](/JISCTF/_resources/2cbc58cd826445df90befc40c4cbd989.png)
 
-Next I want to try command execution
+
 
 ## Command Execution
 
@@ -159,20 +159,20 @@ After failing a few times the code snippet below worked
 Resource to code snippet `https://www.w3resource.com/php-exercises/php-basic-exercise-17.php`
 
 1.  First, save the code to a php file in my case **sat.php**
-2.  Then, Upload Load the file like before thru the file upload page
-3.  Last, Navigate to IPofVM/uploaded_files/sat.php
+2.  Then, Upload Load the file, like before thru the file upload page
+3.  Last, Navigate to IPofVM/uploaded_files/nameofyourphpfile.php
 
 **Success!!!**
 
 ![Optional Text](/JISCTF/_resources/813c0e3cf9864a7a8476a171355cc79c.png)
 
-Now I want to upload a Reverse Shell!
+Now I want a Reverse Shell! 
 
 ### Reverse Shell
 
-To save time I will use the good old "**Pentest Monkey Reverse Shell**". I tested several others that worked, but was not unable to get a python shell.
+To save time I will use the good old "**Pentest Monkey Reverse Shell**". I tested several others that worked, but was unable to get a python shell.
 
-***Rember to change the IP and port to your machine and whatever port you are listening on.***
+***Remember to change the IP and port to your machine and whatever port you are listening on.***
 
 ```
 <?php
@@ -382,7 +382,7 @@ function printit ($string) {
 
 * * *
 
-## In the Shell 
+## The Shell 
 
 I `cat` the `/etc/passwd`
 
