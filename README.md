@@ -1,2 +1,8 @@
 # VulnHubBoxes
-Simple Vulnerable Machines I have worked thru in prep for the OSCP.
+
+Just a place to document the Vulnerable Machines I have worked thru in prep for the OSCP. The goals for creating this are to document my steps in working thru these machines. It can be frustrating to root a machine and as a few weeks/months pass, you forget what you did. Or worse yet, the little tips and tricks I would learn on one machine then later down the road. I would want to apply it to another machine, but couldn't remeber excaclty want I did.
+
+Another big goal is to become better at documenting my steps, this is more for the OSCP. Long term goals are to aquire the OSCP and before I start paying for course and material I want to freshen up on my hacking
+
+## Easy Boxes
+
