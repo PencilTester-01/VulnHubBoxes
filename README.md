@@ -8,4 +8,13 @@ Starting with easy boxes First and will work our way up in difficulty every 5-10
 
 ## Easy Boxes
 
+### Rickdiculously Easy
+Awesome box and if you are looking to start its a great box to start with even though it can be tough at times!
 [Rickdiculously Easy](https://github.com/PencilTester-01/VulnHubBoxes/tree/main/Rickdiculously%20Easy#rickdiculouslyeasy).
+
+### LordofTheRoot
+[LordofTheRoot](https://github.com/PencilTester-01/VulnHubBoxes/tree/main/LordofTheRoot#lordoftheroot)
+
+[LazyAdmin](https://github.com/PencilTester-01/VulnHubBoxes/tree/main/LazyAdminWriteUp#lazysysadmin)
+
+[LazyAdmin](https://github.com/PencilTester-01/VulnHubBoxes/tree/main/JISCTF#jisctf)
