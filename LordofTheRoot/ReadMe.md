@@ -87,6 +87,7 @@ Diving into the URLs from the "dirb scan", I didn't find anything anything inter
 **Viewing the source code I see:**
 
 ![Optional Text](/LordofTheRoot/_resources/674acb1f528642eb89e4994a5fd252e7.png)
+
 **Looks like base64 so I ran the standard:**
 
 `echo 'THprM09ETTBOVEl4TUM5cGJtUmxlQzV3YUhBPSBDbG9zZXIh' | base64 -d`
