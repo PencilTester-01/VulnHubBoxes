@@ -384,7 +384,7 @@ function printit ($string) {
 
 ## The Shell 
 
-I `cat` the `/etc/passwd`
+`cat` the `/etc/passwd`
 
 ```
 cat /etc/passwd
