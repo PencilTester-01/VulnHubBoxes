@@ -317,7 +317,7 @@ I spent way to much time here. First I looked to see if the exe would print out 
 ```
 The above is a small sample of what I tried lol. Finally after a long time, I got lucky and tried `./safe 131333`. The only reason I thought to try this was looking at all the other flags. None of the other flags contained numbers. 
 
-My screenshot got messed up here but below the image, is the full content from running `./safe 131333`
+My screenshot got messed up here but below the screenshot, is the full output from running `./safe 131333`
 
 ![Optional Text](/Rickdiculously%20Easy/_resources/a932636ee913450eb6a3bfa08c8ca6fb.png)
 
@@ -347,7 +347,7 @@ The referrence `sudo is wheely good` seems to be referring to the wheel group. J
 
 ### Crunch
 
-Below are the commands I used to generate my password file. I followed the hints from our last flag. I had to look up Rick's old Band name. Turn out it is **The Flesh Curtains**. This brute forcing took a long time.My first 3 password list failed. Running them is time consuming as well even if you adjust the thread levels.
+Below are the commands I used to generate my password file. I followed the hints from our last flag. I had to look up Rick's old Band name. Turns out it is **The Flesh Curtains**. This brute forcing took a long time. My first 3 password list failed. Running them is always time consuming as well. Even if you adjust the thread levels.
 
  ``` 
  1227  crunch 5 5 -t ,%the -o password.txt 
@@ -371,10 +371,12 @@ I also used cupp.py to generate passwords. Really easy to use tool
 
 `run ./cupp.py -i` and work thru the prompts to create your password file
 
-This time I used hyrdra instead of medusa 
-hydra -l RickSanchez -P the.txt 10.0.0.137 -s22222 ssh
+This time I used hyrdra instead of medusa `hydra -l RickSanchez -P the.txt 10.0.0.137 -s22222 ssh`
 
 
+## SSH as RickSanchez
 
+Using `ssh RickSanchez@10.0.0.137` I ssh to the box and use `P7Curtains` as the password
 
+![Optional Text](/Rickdiculously%20Easy/_resources/
 
