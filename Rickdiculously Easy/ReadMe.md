@@ -390,6 +390,11 @@ I test `sudo` and since it works I try `sudo passwd root`. It prompts for a new 
 
 As root I `cd`, `ls` and `nl nl FLAG.txt` to get the last 30 point!!!!
 
-![Optional Text](/Rickdiculously%20Easy/_resources/
+![Optional Text](/Rickdiculously%20Easy/_resources/Last.png)
+
+`FLAG: {Ionic Defibrillator} - 30 points`
+
+**130 Points found! Zero Left!**
+
 
 
