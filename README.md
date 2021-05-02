@@ -4,6 +4,8 @@ Just a place to document the Vulnerable Machines I have worked thru in prep for 
 
 Another big goal is to become better at documenting my steps, this is more for the OSCP. Long term goals are to aquire the OSCP and before I start paying for course and material I want to freshen up on my hacking
 
+Starting with easy boxes First and will work our way up in difficulty every 5-10 boxes!
+
 ## Easy Boxes
 
-https://github.com/PencilTester-01/VulnHubBoxes/tree/main/Rickdiculously%20Easy#rickdiculouslyeasy
+[Rickdiculously Easy](https://github.com/PencilTester-01/VulnHubBoxes/tree/main/Rickdiculously%20Easy#rickdiculouslyeasy).
