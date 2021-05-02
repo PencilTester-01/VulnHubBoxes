@@ -14,12 +14,15 @@ Awesome box and if you are looking to start its a great box to start with even t
 
 ### LordofTheRoot
 Good Box but I had a lot of issues with SQLMAP while working thru the box
+
 [LordofTheRoot](https://github.com/PencilTester-01/VulnHubBoxes/tree/main/LordofTheRoot#lordoftheroot)
 
 ### LazyAdmin
 This was fun box and there is plenty to get you distracted. Even though this box is rated easy I have meant worse SysAdmins!
+
 [LazyAdmin](https://github.com/PencilTester-01/VulnHubBoxes/tree/main/LazyAdminWriteUp#lazysysadmin)
 
 ### JISCTF
 Great box, harder than I orginally thought it was going to be, before I started searching for flags I thought I might have missed something!
+
 [JISCTF](https://github.com/PencilTester-01/VulnHubBoxes/tree/main/JISCTF#jisctf)
