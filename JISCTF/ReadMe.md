@@ -144,7 +144,7 @@ I was able to login using the creds I found eariler on the `http://10.0.0.131/lo
 ![Optional Text](/JISCTF/_resources/18d8cdf37c994da0ad1d0b5c3912ed0c.png)
 Once Logged in, it looks like a file a file upload
 ![Optional Text](/JISCTF/_resources/ac747f1f4a954b45bee37746ea9aec2f.png)
-I uploaded a File, and it **returned "Success" in the top left** to confirm we we use uploaded_files, this was found in the robots.txt earlier
+I uploaded a File, and it **returned "Success" in the top left** to confirm we can use `uploaded_files`, this was found in the robots.txt earlier
 
 **Succes!** **I was able to upload an image!**
 
