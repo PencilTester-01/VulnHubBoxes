@@ -380,7 +380,10 @@ Using `ssh RickSanchez@10.0.0.137` I ssh to the box and use `P7Curtains` as the 
 
 ![Optional Text](/Rickdiculously%20Easy/_resources/RickSSHlogin.png)
 
-It works! Finally Logged in as Rick! But I still only have **100 points out of 130** Now I think I see
+It works! Finally Logged in as Rick! But I still only have **100 points out of 130** Now I see the reason for the `sudo is wheely good`
 
+I test `sudo` and since it works I try `sudo passwd root`. It prompts for a new password and I give it `pencil1234`
+
+![Optional Text](/Rickdiculously%20Easy/_resources/
 
 
