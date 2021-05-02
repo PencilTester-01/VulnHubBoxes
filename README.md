@@ -6,3 +6,4 @@ Another big goal is to become better at documenting my steps, this is more for t
 
 ## Easy Boxes
 
+https://github.com/PencilTester-01/VulnHubBoxes/tree/main/Rickdiculously%20Easy#rickdiculouslyeasy
