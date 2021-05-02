@@ -378,5 +378,9 @@ This time I used hyrdra instead of medusa `hydra -l RickSanchez -P the.txt 10.0.
 
 Using `ssh RickSanchez@10.0.0.137` I ssh to the box and use `P7Curtains` as the password
 
-![Optional Text](/Rickdiculously%20Easy/_resources/
+![Optional Text](/Rickdiculously%20Easy/_resources/RickSSHlogin.png)
+
+It works! Finally Logged in as Rick! But I still only have **100 points out of 130** Now I think I see
+
+
 
